@@ -13,6 +13,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    overflow: hidden;
+}
+
 app-galaxy,
 app-character {
     position: absolute;
@@ -23,3 +28,4 @@ app-character {
     justify-content: center;
     align-items: center;
 }
+
