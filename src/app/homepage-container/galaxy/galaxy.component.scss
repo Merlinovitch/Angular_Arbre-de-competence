@@ -6,11 +6,11 @@
     border-radius: 50%;
     overflow: hidden;
 }
+
 .galaxy {
     width: var(--galaxy-radius);
     height: var(--galaxy-radius);
     transition: 3s;
-    position: absolute;
     background-image: url(../../../../src/assets/images/galaxy.webp);
     background-size: contain;
     background-position: center;
@@ -22,6 +22,7 @@
     0% {
         transform: rotateX(60deg) rotate(0deg) scale(2);
     }
+
     100% {
         transform: rotateX(60deg) rotate(360deg) scale(2);
     }

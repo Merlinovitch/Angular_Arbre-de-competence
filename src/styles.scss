@@ -20,11 +20,6 @@ body {
     overflow: hidden;
 }
 
-app-galaxy,
-app-character {
-    position: absolute;
-}
-
 app-character {
     display: flex;
     justify-content: center;
@@ -39,4 +34,3 @@ body {
     height: 100%;
     width: 100%;
 }
-

@@ -8,7 +8,7 @@
         color: $primary;
 
         &-title {
-            font-size: 2rem;
+            font-size: 1rem;
         }
     }
 
@@ -19,5 +19,6 @@
         margin: 1rem;
         border: 1px solid $secondary;
         border-radius: 10px;
+        width: fit-content;
     }
 }
