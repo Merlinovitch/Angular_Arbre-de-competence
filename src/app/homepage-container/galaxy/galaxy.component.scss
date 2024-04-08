@@ -4,6 +4,7 @@
     animation: galaxy-rotation 300s linear infinite;
     transform: rotateX(60deg) scale(2);
     border-radius: 50%;
+    overflow: hidden;
 }
 .galaxy {
     width: var(--galaxy-radius);

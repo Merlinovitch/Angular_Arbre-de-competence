@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .character-wrapper {
     position: absolute;
     display: flex;
@@ -32,15 +34,6 @@
     pointer-events: none;
 }
 
-@keyframes character-rotation {
-    0% {
-        transform: rotate(calc(-30deg * var(--angle) + 360deg)) rotateX(-60deg);
-    }
-    100% {
-        transform: rotate(calc(-30deg * var(--angle))) rotateX(-60deg);
-    }
-}
-
 .character-picture {
     width: var(--size);
     height: var(--size);
@@ -54,8 +47,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid var(--clr-tooltip-border);
-    animation: user-rotation 300s linear infinite;
+    border: 2px solid $secondary;
+    animation: character-rotation 300s linear infinite;
     pointer-events: all;
     cursor: pointer;
     box-sizing: border-box;
@@ -66,10 +59,10 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        background-color: var(--clr-tooltip-background);
-        box-shadow: 0 0 4px #46FCFF,
-        inset 0 0 8px #46FCFF,
-        inset 0 0 12px #46FCFF;
+        background-color: $secondary;
+        box-shadow: 0 0 4px $primary,
+        inset 0 0 8px $primary,
+        inset 0 0 12px $primary;
         pointer-events: none;
         transition: .5s;
         z-index: -1;
@@ -79,8 +72,8 @@
             height: 35%;
             top: -5px;
             left: -5px;
-            border-top: 5px solid #46FCFF;
-            border-left: 5px solid #46FCFF;
+            border-top: 5px solid $primary;
+            border-left: 5px solid $primary;
         }
 
         &:nth-child(2) {
@@ -88,9 +81,18 @@
             height: 35%;
             right: -5px;
             bottom: -5px;
-            border-right: 5px solid #46FCFF;
-            border-bottom: 5px solid #46FCFF;
+            border-right: 5px solid $primary;
+            border-bottom: 5px solid $primary;
         }
+    }
+}
+
+@keyframes character-rotation {
+    0% {
+        transform: rotate(calc(-30deg * var(--angle) + 360deg)) rotateX(-60deg);
+    }
+    100% {
+        transform: rotate(calc(-30deg * var(--angle))) rotateX(-60deg);
     }
 }
 
@@ -100,10 +102,9 @@
     height: 100%;
     display: flex;
     align-items: center;
-    background-size: auto 100%;
+    background-size: auto 95%;
     background-position: top center;
     background-repeat: no-repeat;
-    border: 2px solid transparent;
     transition: .5s;
     overflow: hidden;
     animation: hologram calc(var(--timer) * 2) linear infinite;
@@ -115,8 +116,8 @@
         sepia(1)
         hue-rotate(180deg)
         saturate(2)
-        drop-shadow(0 0 2px var(--clr-tooltip-border))
-        drop-shadow(0 0 8px var(--clr-tooltip-border));
+        drop-shadow(0 0 2px $secondary)
+        drop-shadow(0 0 8px $secondary);
         opacity: .75;
     }
     26% {
@@ -174,11 +175,11 @@
     left: 0;
     width: 2px;
     height: 0;
-    background-color: var(--clr-tooltip-border);
-    box-shadow: 0 0 2px var(--clr-tooltip-border),
-    0 0 4px var(--clr-tooltip-border),
-    0 0 8px var(--clr-tooltip-border),
-    0 0 16px var(--clr-tooltip-border);
+    background-color: $primary;
+    box-shadow: 0 0 2px $primary,
+    0 0 4px $primary,
+    0 0 8px $primary,
+    0 0 16px $primary;
     transition: .5s;
 }
 
@@ -245,19 +246,19 @@
 
 @keyframes tooltip-hover-p {
     from, to {
-        text-shadow: 0 0 20px var(--clr-tooltip-border);
+        text-shadow: 0 0 20px $secondary;
     }
     40% {
-        text-shadow: 0 0 20px var(--clr-tooltip-border);
+        text-shadow: 0 0 20px $secondary;
     }
     45% {
-        text-shadow: 0 0 20px var(--clr-tooltip-border), -8px 0 2px #abe0e2bb;
+        text-shadow: 0 0 20px $secondary, -8px 0 2px #abe0e2bb;
     }
     50% {
-        text-shadow: 0 0 20px var(--clr-tooltip-border), 8px 0 2px #abe0e2bb;
+        text-shadow: 0 0 20px $secondary, 8px 0 2px #abe0e2bb;
     }
     55% {
-        text-shadow: 0 0 20px var(--clr-tooltip-border);
+        text-shadow: 0 0 20px $secondary;
     }
 }
 
@@ -268,13 +269,14 @@
     justify-content: center;
     width: 0;
     height: 100%;
-    color: var(--clr-tooltip-border);
+    color: $primary;
     font-family: 'OriginTech';
-    text-shadow: 0 0 20px var(--clr-tooltip-border);
+    text-shadow: 0 0 20px $secondary;
     overflow: hidden;
     transition: .5s;
 
     h2 {
+        margin: 0;
         font-size: 1rem;
         white-space: nowrap;
     }
