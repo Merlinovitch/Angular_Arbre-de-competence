@@ -1,2 +1,6 @@
 <div class="homepage-character-list-container">
-</div>
+    <h3 class="homepage-character-list-container-title">Liste des apprenants</h3>
+
+    <div class="homepage-character-card" *ngFor="let char of chars">
+        <p class="homepage-character-card-name">{{ char.name }} {{ char.lastname }}</p>
+    </div>
