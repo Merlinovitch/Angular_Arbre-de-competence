@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { GalaxyComponent } from './galaxy/galaxy.component';
+import { GalaxyComponent } from './homepage-container/galaxy/galaxy.component';
 import { HomepageContainerComponent } from './homepage-container/homepage-container.component';
 import { FooterComponent } from './footer/footer.component';
 
