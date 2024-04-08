@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'OriginTech';
+    src: url(assets/fonts/OriginTech.ttf);
+}
+
 :root {
     --galaxy-radius: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+app-galaxy,
+app-character {
+    position: absolute;
+}
+
+app-character {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
