@@ -11,17 +11,31 @@ export class DataServiceService {
   constructor() { 
   }
   
-  async getAllApprenant() {    
-    try{
-      const { data, error } = await this.supabase.from("Apprenant").select();
-      console.log(data);
-      return data;
-    } catch(error){
-      console.log(error);
-      return [];
-    }
-  }
+//   getAllApprenant() {
+// 	return new Promise((resolve, reject) => {
+// 	  this.supabase.from("Apprenant").select()
+// 		.then(({ data, error }) => {
+// 		  if (error) {
+// 			console.log(error);
+// 			reject(error);
+// 		  } else {
+// 			console.log(data);
+// 			resolve(data);
+// 		  }
+// 		})
+// 	});
+//   }
 
+async getAllApprenant() {
+	try{
+		const { data, error } = await this.supabase.from("Apprenant").select();
+		console.log("apprenant",data);
+		return data;
+	} catch(error){
+		console.log(error);
+		return [];
+	}
+}
 
   async getAllCompetence(){
 	try{
