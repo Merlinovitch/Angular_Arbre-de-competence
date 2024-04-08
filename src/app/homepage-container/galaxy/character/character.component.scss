@@ -1,0 +1,294 @@
+@import '../../../variables.scss';
+
+.character-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--galaxy-radius);
+    height: var(--galaxy-radius);
+    animation: character-wrapper-rotation 300s linear infinite;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+@keyframes character-wrapper-rotation {
+    0% {
+        transform: rotateX(60deg) rotate(0deg);
+    }
+    100% {
+        transform: rotateX(60deg) rotate(360deg);
+    }
+}
+
+.character {
+    position: absolute;
+    width:var(--size);
+    height:var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(calc(var(--galaxy-radius) / 1.5)) rotate(calc(30deg * var(--angle)));
+    transform-origin: calc(calc(var(--galaxy-radius) / -1.5) + calc(var(--size) / 2));
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+.character-picture {
+    width: var(--size);
+    height: var(--size);
+    transition: 1s;
+}
+
+.character-content {
+    position: absolute;
+    min-width: var(--size);
+    height: var(--size);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid $secondary;
+    animation: character-rotation 300s linear infinite;
+    pointer-events: all;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .5s;
+    z-index: -1;
+
+    span {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: $secondary;
+        box-shadow: 0 0 4px $primary,
+        inset 0 0 8px $primary,
+        inset 0 0 12px $primary;
+        pointer-events: none;
+        transition: .5s;
+        z-index: -1;
+
+        &:nth-child(1) {
+            width: 35%;
+            height: 35%;
+            top: -5px;
+            left: -5px;
+            border-top: 5px solid $primary;
+            border-left: 5px solid $primary;
+        }
+
+        &:nth-child(2) {
+            width: 35%;
+            height: 35%;
+            right: -5px;
+            bottom: -5px;
+            border-right: 5px solid $primary;
+            border-bottom: 5px solid $primary;
+        }
+    }
+}
+
+@keyframes character-rotation {
+    0% {
+        transform: rotate(calc(-30deg * var(--angle) + 360deg)) rotateX(-60deg);
+    }
+    100% {
+        transform: rotate(calc(-30deg * var(--angle))) rotateX(-60deg);
+    }
+}
+
+.character-picture {
+    position: relative;
+    min-width: var(--size);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-size: auto 95%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    transition: .5s;
+    overflow: hidden;
+    animation: hologram calc(var(--timer) * 2) linear infinite;
+}
+
+@keyframes hologram {
+    from, to {
+        filter:
+        sepia(1)
+        hue-rotate(180deg)
+        saturate(2)
+        drop-shadow(0 0 2px $secondary)
+        drop-shadow(0 0 8px $secondary);
+        opacity: .75;
+    }
+    26% {
+        opacity: .75;
+    }
+    27% {
+        transform: none;
+        opacity: 0;
+    }
+    28%  {
+        transform: scaleX(.75);
+        opacity: .75;
+    }
+    29% {
+        transform: none;
+        opacity: 0;
+    }
+    30% {
+        opacity: .75;
+    }
+    49% {
+        opacity: .75;
+        transform: none;
+    }
+    50% {
+        opacity: .25;
+        transform: scaleX(.95);
+    }
+    51% {
+        opacity: .75;
+        transform: none;
+    }
+    76% {
+        opacity: .75;
+    }
+    77% {
+        transform: none;
+        opacity: 0;
+    }
+    78%  {
+        transform: scaleX(.75);
+        opacity: .75;
+    }
+    79% {
+        transform: none;
+        opacity: 0;
+    }
+    80% {
+        opacity: .75;
+    }
+}
+
+.character-picture-border {
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: $primary;
+    box-shadow: 0 0 2px $primary,
+    0 0 4px $primary,
+    0 0 8px $primary,
+    0 0 16px $primary;
+    transition: .5s;
+}
+
+.character-content:hover {
+    height: calc(var(--size) * 1.5) !important;
+}
+
+.character-content:hover > .character-picture {
+    width: calc(var(--size) * 1.5);
+    height: calc(var(--size) * 1.5);
+    opacity: .9;
+}
+
+.character-content:hover .character-picture-border {
+    height: 100%;
+}
+
+.character-content:hover span:nth-child(1),
+.character-content:hover span:nth-child(2) {
+    width: 75%;
+    height: 75%;
+}
+
+.character-1 {
+    background-image: url(../../../../assets/images/characters/Alex-200.png);
+}
+.character-2 {
+    background-image: url(../../../../assets/images/characters/Alex_M-200.png);
+}
+.character-3 {
+    background-image: url(../../../../assets/images/characters/Eric-200.png);
+}
+.character-4 {
+    background-image: url(../../../../assets/images/characters/Geoffrey-200.png);
+}
+.character-5 {
+    background-image: url(../../../../assets/images/characters/Karl-200.png);
+}
+.character-6 {
+    background-image: url(../../../../assets/images/characters/Kevin-200.png);
+}
+.character-7 {
+    background-image: url(../../../../assets/images/characters/Theo_C-200.png);
+}
+.character-8 {
+    background-image: url(../../../../assets/images/characters/Theo_D-200.png);
+}
+.character-9 {
+    background-image: url(../../../../assets/images/characters/Vivien-200.png);
+}
+.character-10 {
+    background-image: url(../../../../assets/images/characters/William-200.png);
+}
+
+.character-content:hover .tooltip {
+    width: 150px;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+
+.character-content:hover .tooltip p {
+    animation: tooltip-hover-p 4s linear infinite;
+}
+
+@keyframes tooltip-hover-p {
+    from, to {
+        text-shadow: 0 0 20px $secondary;
+    }
+    40% {
+        text-shadow: 0 0 20px $secondary;
+    }
+    45% {
+        text-shadow: 0 0 20px $secondary, -8px 0 2px #abe0e2bb;
+    }
+    50% {
+        text-shadow: 0 0 20px $secondary, 8px 0 2px #abe0e2bb;
+    }
+    55% {
+        text-shadow: 0 0 20px $secondary;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 0;
+    height: 100%;
+    color: $primary;
+    font-family: 'OriginTech';
+    text-shadow: 0 0 20px $secondary;
+    overflow: hidden;
+    transition: .5s;
+
+    h2 {
+        margin: 0;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    h2:first-of-type {
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: .75rem;
+        white-space: nowrap;
+        margin-top: auto;
+        margin-bottom: 20px;
+    }
+}
