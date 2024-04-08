@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { DataServiceService } from './data-service.service';
 import { GalaxyComponent } from './homepage-container/galaxy/galaxy.component';
 import { HomepageContainerComponent } from './homepage-container/homepage-container.component';
 import { FooterComponent } from './footer/footer.component';
-
 
 @Component({
   selector: 'app-root',
@@ -15,4 +15,17 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'SkillTree';
+  apprenant: any[] = []
+  constructor(private dataService: DataServiceService) {
+  }
+
+  ngOnInit(): void {
+    this.dataService.getAllApprenant();
+    this.dataService.getAllCompetence();
+    this.dataService.getAllActivite();
+    this.dataService.getCompentenceByIdApprenant(1);
+  }
+
+  
+
 }
