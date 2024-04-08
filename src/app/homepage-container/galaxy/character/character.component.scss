@@ -102,6 +102,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    background-image: var(--url);
     background-size: auto 95%;
     background-position: top center;
     background-repeat: no-repeat;
@@ -203,7 +204,7 @@
     height: 75%;
 }
 
-.character-1 {
+/* .character-1 {
     background-image: url(../../../../assets/images/characters/Alex-200.png);
 }
 .character-2 {
@@ -228,11 +229,11 @@
     background-image: url(../../../../assets/images/characters/Theo_D-200.png);
 }
 .character-9 {
-    background-image: url(../../../../assets/images/characters/Vivien-200.png);
+    background-image: var(--url);
 }
 .character-10 {
-    background-image: url(../../../../assets/images/characters/William-200.png);
-}
+    background-image: var(--url);
+} */
 
 .character-content:hover .tooltip {
     width: 150px;

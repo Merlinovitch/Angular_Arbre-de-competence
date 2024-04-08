@@ -1,14 +1,14 @@
 <div class="character-wrapper">
-    <div class="character" style="--delay:1s; --angle: 1; --timer: 2.5s; --size: 5rem">
+    <div *ngFor="let char of chars ; index as i" class="character" style="--url: url(../../../../assets/images/characters/{{ char.photo_url }}.png); --angle: {{ i + 1 }}; --timer: {{ i + 1 }}s; --size: 5rem">
         <div class="character-content">
             <span></span>
             <span></span>
             <span></span>
-            <div class="character-picture character-1"></div>
+            <div class="character-picture character-{{i}}"></div>
             <div class="tooltip">
                 <div class="character-picture-border"></div>
-                <h2>Alexandre</h2>
-                <h2>Buffet</h2>
+                <h2>{{ char.name }}</h2>
+                <h2>{{ char.lastname }}</h2>
                 <p>Click For Skill Tree</p>
             </div>
         </div>
