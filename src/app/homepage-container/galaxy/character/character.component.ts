@@ -14,6 +14,7 @@ import { NgFor } from '@angular/common';
 
 export class CharacterComponent {
   chars: any;
+  timers: any;
   Math: Math = Math;
   constructor(
     private dataService: DataServiceService
@@ -24,7 +25,21 @@ export class CharacterComponent {
   async ngOnInit():Promise<void>
   {
       this.chars = await this.dataService.getAllApprenant();
-      console.log(this.chars)
+
+      this.timers = [
+        "2.2",
+        "2.4",
+        "3.2",
+        "4",
+        "2.5",
+        "3.4",
+        "4.2",
+        "2.8",
+        "3.5",
+        "4.4",
+        "2.6",
+        "3.6",
+      ];
   }
   
 }

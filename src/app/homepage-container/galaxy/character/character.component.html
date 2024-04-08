@@ -1,5 +1,5 @@
 <div class="character-wrapper">
-    <div *ngFor="let char of chars ; index as i" class="character" style="--url: url(../../../../assets/images/characters/{{ char.photo_url }}.png); --angle: {{ i + 1 }}; --timer: {{ i + 1 }}s; --size: 5rem">
+    <div *ngFor="let char of chars ; index as i" class="character" style="--url: url(../../../../assets/images/characters/{{ char.photo_url }}.png); --angle: {{ i + 1 }}; --timer: {{ timers[i] }}s; --size: 5rem">
         <div class="character-content">
             <span></span>
             <span></span>

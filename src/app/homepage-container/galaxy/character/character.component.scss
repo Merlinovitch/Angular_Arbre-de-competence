@@ -117,8 +117,8 @@
         sepia(1)
         hue-rotate(180deg)
         saturate(2)
-        drop-shadow(0 0 2px $secondary)
-        drop-shadow(0 0 8px $secondary);
+        drop-shadow(0 0 2px $primary)
+        drop-shadow(0 0 8px $primary);
         opacity: .75;
     }
     26% {
@@ -204,37 +204,6 @@
     height: 75%;
 }
 
-/* .character-1 {
-    background-image: url(../../../../assets/images/characters/Alex-200.png);
-}
-.character-2 {
-    background-image: url(../../../../assets/images/characters/Alex_M-200.png);
-}
-.character-3 {
-    background-image: url(../../../../assets/images/characters/Eric-200.png);
-}
-.character-4 {
-    background-image: url(../../../../assets/images/characters/Geoffrey-200.png);
-}
-.character-5 {
-    background-image: url(../../../../assets/images/characters/Karl-200.png);
-}
-.character-6 {
-    background-image: url(../../../../assets/images/characters/Kevin-200.png);
-}
-.character-7 {
-    background-image: url(../../../../assets/images/characters/Theo_C-200.png);
-}
-.character-8 {
-    background-image: url(../../../../assets/images/characters/Theo_D-200.png);
-}
-.character-9 {
-    background-image: var(--url);
-}
-.character-10 {
-    background-image: var(--url);
-} */
-
 .character-content:hover .tooltip {
     width: 150px;
     margin-right: 10px;
@@ -247,19 +216,19 @@
 
 @keyframes tooltip-hover-p {
     from, to {
-        text-shadow: 0 0 20px $secondary;
+        text-shadow: 0 0 20px $primary;
     }
     40% {
-        text-shadow: 0 0 20px $secondary;
+        text-shadow: 0 0 20px $primary;
     }
     45% {
-        text-shadow: 0 0 20px $secondary, -8px 0 2px #abe0e2bb;
+        text-shadow: 0 0 20px $primary, -8px 0 2px #abe0e2bb;
     }
     50% {
-        text-shadow: 0 0 20px $secondary, 8px 0 2px #abe0e2bb;
+        text-shadow: 0 0 20px $primary, 8px 0 2px #abe0e2bb;
     }
     55% {
-        text-shadow: 0 0 20px $secondary;
+        text-shadow: 0 0 20px $primary;
     }
 }
 
@@ -272,7 +241,7 @@
     height: 100%;
     color: $primary;
     font-family: 'OriginTech';
-    text-shadow: 0 0 20px $secondary;
+    text-shadow: 0 0 20px $primary;
     overflow: hidden;
     transition: .5s;
 
