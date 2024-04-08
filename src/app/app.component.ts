@@ -5,6 +5,7 @@ import { DataServiceService } from './data-service.service';
 import { GalaxyComponent } from './homepage-container/galaxy/galaxy.component';
 import { HomepageContainerComponent } from './homepage-container/homepage-container.component';
 import { FooterComponent } from './footer/footer.component';
+import { ConstellationContainerComponent } from './constellation-container/constellation-container.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
     GalaxyComponent,
     HomepageContainerComponent,
     FooterComponent,
+    ConstellationContainerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
