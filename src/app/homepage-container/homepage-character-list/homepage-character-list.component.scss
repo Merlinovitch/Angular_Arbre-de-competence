@@ -1,5 +1,9 @@
 @import "../../variables.scss";
 
-ul li {
-    color: $primary;
+.homepage-character-list-container {
+    background-color: $secondary;
+    width: 5rem;
+    height: fit-content;
+    border: 1px solid $primary;
+
 }
