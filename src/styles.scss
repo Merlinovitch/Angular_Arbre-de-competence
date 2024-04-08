@@ -7,7 +7,7 @@
 }
 
 :root {
-    --galaxy-radius: 100vh;
+    --galaxy-radius: 90vh;
 }
 
 * {
@@ -23,6 +23,7 @@ body {
 app-galaxy,
 app-character {
     position: absolute;
+    margin-left: 200px;
 }
 
 app-character {

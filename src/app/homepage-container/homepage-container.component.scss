@@ -12,12 +12,19 @@
 
     &-title {
         position: absolute;
-        top: 0;
-        left: 0;
+        /* top: 0;
+        left: 0; */
+        margin-left: 200px;
         padding-top: 2rem;
         padding-left: 2rem;
         font-size: 5rem;
-        color: $primary;
+        text-shadow: 0 0 2px $primary,
+        0 0 4px $primary,
+        0 0 8px $primary,
+        0 0 16px $primary,
+        0 0 32px $primary,
+        0 0 64px $primary;
+        color: $secondary;
         font-family: 'OriginTech';
         z-index: 1;
     }
