@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+
 @font-face {
     font-family: 'OriginTech';
     src: url(assets/fonts/OriginTech.ttf);
@@ -27,5 +29,14 @@ app-character {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* Add application styles & imports to this file! */
+
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
 
