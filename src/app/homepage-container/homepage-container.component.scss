@@ -18,13 +18,12 @@
         background-repeat: repeat;
         background-size: 100% auto;
         background-position: center;
-        animation: homepage-init-zoom 3s linear forwards, 180s homepage-zoom-in-out 3s linear infinite;
+        // animation: homepage-init-zoom 3s linear forwards;
     }
     &-title {
         position: absolute;
         top: 0;
         margin: 0 auto;
-        padding-top: 1rem;
         font-size: 5rem;
         text-shadow: 0 0 2px $primary,
         0 0 4px $primary,
@@ -41,7 +40,7 @@
         position: absolute;
         top: 0;
         margin: 0;
-        margin-top: 6rem;
+        margin-top: 5rem;
         font-size: 2rem;
         color: $primary;
         font-family: 'OriginTech';
@@ -50,7 +49,7 @@
 
 @keyframes homepage-init-zoom {
     100% {
-        background-size: 120% auto;
+        background-size: 110% auto;
     }
 }
 
@@ -90,6 +89,9 @@
 app-homepage-character-list {
     position: relative;
     left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
     padding-left: 2rem;
     font-family: 'OriginTech';
 }
