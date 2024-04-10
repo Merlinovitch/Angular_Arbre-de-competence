@@ -3,14 +3,20 @@
     background-size: cover;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+
+.container-constellation{
+    display: flex;
     justify-content: center;
     flex-direction: row;
     padding-top: 3rem;
 }
 
 @media screen and (max-width: 600px) {
-    .container{
+    .container-constellation{
         flex-direction: column;
     }
     
 }
+

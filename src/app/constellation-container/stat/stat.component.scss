@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.picture-container img{
+    border-radius: 100px;
+}
+
+.stat-right, .stat-left {
+    padding: 2rem;
+}
