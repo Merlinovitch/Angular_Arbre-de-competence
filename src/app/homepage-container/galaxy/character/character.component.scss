@@ -63,11 +63,13 @@
     border: 2px solid $secondary;
     animation: character-rotation 300s linear infinite;
     pointer-events: all;
-    cursor: pointer;
     box-sizing: border-box;
     transition: .5s;
     z-index: -1;
 
+    * {
+        pointer-events: none;
+    }
     span {
         position: absolute;
         height: 100%;
@@ -123,7 +125,6 @@
     transition: .5s, height 1s;
     transform-origin: bottom;
     animation: hologram calc(var(--timer) * 2) linear infinite;
-
 }
 
 .character-picture::before {

@@ -1,0 +1,70 @@
+@import "../variables.scss";
+
+#canvas {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    z-index: 999999;
+}
+
+#cursor {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: opacity .25s;
+    z-index: 999;
+}
+
+#cursor span {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    box-shadow: 0 0 2px $primary;
+    transition: .25s;
+}
+
+#cursor:not(.cursor-focus) span:nth-child(1),
+#cursor:not(.cursor-focus) span:nth-child(2) {
+    height: 25%;
+    margin: 0;
+}
+
+#cursor:not(.cursor-focus) span:nth-child(3),
+#cursor:not(.cursor-focus) span:nth-child(4) {
+    width: 25%;
+    margin: 0;
+}
+
+#cursor span:nth-child(1) {
+    top: 0;
+    width: 3px;
+    height: 50%;
+    background: $primary;
+}
+
+#cursor span:nth-child(2) {
+    bottom: 0;
+    width: 3px;
+    height: 50%;
+    background: $primary;
+}
+
+#cursor span:nth-child(3) {
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: $primary;
+}
+
+#cursor span:nth-child(4) {
+    right: 0;
+    width: 50%;
+    height: 3px;
+    background: $primary;
+}

@@ -8,6 +8,7 @@
         justify-content: center;
         align-items: center;
         background-color: black;
+        overflow: hidden;
     }
 
     &-background {
@@ -24,26 +25,38 @@
         position: absolute;
         top: 0;
         margin: 0 auto;
-        font-size: 5rem;
+        padding-top: .5rem;
+        font-size: 4rem;
+        letter-spacing: .2rem;
         text-shadow: 0 0 2px $primary,
         0 0 4px $primary,
         0 0 8px $primary,
         0 0 16px $primary,
         0 0 32px $primary,
         0 0 64px $primary;
-        color: $secondary;
+        color: #000;
+        mix-blend-mode: lighten;
         font-family: 'OriginTech';
-        z-index: 1;
+        user-select: none;
+        z-index: 999;
     }
 
     &-subtitle {
         position: absolute;
         top: 0;
         margin: 0;
-        margin-top: 5rem;
+        margin-top: 4.5rem;
         font-size: 2rem;
-        color: $primary;
+        letter-spacing: .6rem;
+        text-shadow: 0 0 2px $primary,
+        0 0 4px $primary,
+        0 0 8px $primary,
+        0 0 16px $primary,
+        0 0 32px $primary;
+        color: #000000f3;
         font-family: 'OriginTech';
+        user-select: none;
+        z-index: 999;
     }
 }
 
