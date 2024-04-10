@@ -16,22 +16,15 @@
     box-sizing: border-box;
 }
 
-body {
-    overflow: hidden;
-}
-
-app-galaxy,
 app-character {
     position: absolute;
-    margin-left: 200px;
-}
-
-app-character {
+    width: var(--galaxy-radius);
+    height: var(--galaxy-radius);
     display: flex;
     justify-content: center;
     align-items: center;
+    transform-style: preserve-3d;
 }
-
 
 /* Add application styles & imports to this file! */
 
@@ -39,5 +32,6 @@ html,
 body {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
