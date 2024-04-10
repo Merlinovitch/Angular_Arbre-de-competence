@@ -4,6 +4,13 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: row;
+    padding-top: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        flex-direction: column;
+    }
+    
 }

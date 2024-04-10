@@ -2,3 +2,17 @@
     display: flex;
     flex-direction: column;
 }
+.constellation-svg {
+    display: block;
+}
+.constellation-svg-little {
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    .constellation-svg {
+        display: none;
+    }
+    .constellation-svg-little {
+        display: block;
+    }
+}
