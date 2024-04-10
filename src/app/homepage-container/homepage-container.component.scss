@@ -23,11 +23,8 @@
     &-title {
         position: absolute;
         top: 0;
-        left: 0;
-        margin: 0;
-        // margin-left: 200px;
-        padding-top: 2rem;
-        padding-left: 2rem;
+        margin: 0 auto;
+        padding-top: 1rem;
         font-size: 5rem;
         text-shadow: 0 0 2px $primary,
         0 0 4px $primary,
@@ -43,10 +40,8 @@
     &-subtitle {
         position: absolute;
         top: 0;
-        left: 0;
         margin: 0;
-        margin-top: 8rem;
-        padding-left: 2rem;
+        margin-top: 6rem;
         font-size: 2rem;
         color: $primary;
         font-family: 'OriginTech';
@@ -93,5 +88,8 @@
 }
 
 app-homepage-character-list {
-    margin-block: auto;
+    position: relative;
+    left: 0;
+    padding-left: 2rem;
+    font-family: 'OriginTech';
 }

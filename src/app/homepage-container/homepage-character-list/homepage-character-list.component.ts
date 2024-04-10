@@ -20,4 +20,5 @@ export class HomepageCharacterListComponent {
   {
       this.chars = await this.dataService.getAllApprenant();
   }
+
 }

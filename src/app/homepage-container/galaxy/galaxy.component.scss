@@ -7,6 +7,7 @@
     // transform: rotateX(60deg) scale(2);
     transform-style: preserve-3d;
     border-radius: 50%;
+    pointer-events: none;
     // overflow: hidden;
 }
 
@@ -26,9 +27,9 @@
     background-position: center;
     transition: 3s;
     transition-timing-function: ease-in;
-    // transform: translateZ(-60px) scale(2);
+    transform: translateZ(-60px) scale(2);
     transform-style: preserve-3d;
-    animation: appears 5s linear forwards;
+    // animation: appears 5s linear forwards;
     animation-timing-function: ease-in-out;
     filter: saturate(1.25) contrast(1.25);
     // overflow: hidden;
@@ -45,11 +46,11 @@
 
 @keyframes galaxy-rotation {
     0% {
-        transform: rotateX(60deg) rotate(0deg)/*  scale(2) */;
+        transform: rotateX(60deg) rotate(0deg);
     }
 
     100% {
-        transform: rotateX(60deg) rotate(360deg)/*  scale(2) */;
+        transform: rotateX(60deg) rotate(360deg);
     }
 }
 

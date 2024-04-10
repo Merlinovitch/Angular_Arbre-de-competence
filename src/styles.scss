@@ -17,7 +17,7 @@
 }
 
 app-character {
-    position: absolute;
+    // position: absolute;
     width: var(--galaxy-radius);
     height: var(--galaxy-radius);
     display: flex;
@@ -26,6 +26,11 @@ app-character {
     transform-style: preserve-3d;
 }
 
+app-galaxy {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
 /* Add application styles & imports to this file! */
 
 html,
