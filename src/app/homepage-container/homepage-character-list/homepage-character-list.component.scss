@@ -10,7 +10,6 @@
         gap: .75rem;
         background-color: $secondary;
         padding: 1rem;
-        border: 1px solid $primary;
         color: $primary;
         overflow: visible;
         z-index: 1;
@@ -32,6 +31,7 @@
             inset 0 0 8px $primary,
             inset 0 0 12px $primary;
             pointer-events: none;
+            transition: .5s;
             z-index: -2;
     
             &:nth-child(1) {
@@ -54,16 +54,25 @@
         }
 
         &-title {
-            padding-bottom: .5rem;
+            user-select: none;
             font-size: 1rem;
             text-shadow: 0 0 2px $primary;
         }
     }
 
+    &-list-container:hover {
+        span:nth-child(1),
+        span:nth-child(2) {
+            width: 75%;
+            height: 75%;
+        }
+    }
+
     &-card {
+        padding: .5rem 0;
+        font-size: .95rem;
         text-align: center;
         color: $primary;
-        padding: .5rem;
         border: 1px solid $primary;
         box-shadow: 0 0 4px $primary,
         inset 0 0 8px $primary;
@@ -76,5 +85,6 @@
         background: $primary;
         color: $secondary;
         text-shadow: 0 0 2px $secondary;
+        letter-spacing: .05rem;
     }
 }
