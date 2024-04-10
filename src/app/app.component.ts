@@ -6,6 +6,7 @@ import { GalaxyComponent } from './homepage-container/galaxy/galaxy.component';
 import { HomepageContainerComponent } from './homepage-container/homepage-container.component';
 import { FooterComponent } from './footer/footer.component';
 import { ConstellationContainerComponent } from './constellation-container/constellation-container.component';
+import { CanvasComponent } from './canvas/canvas.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { ConstellationContainerComponent } from './constellation-container/const
     HomepageContainerComponent,
     FooterComponent,
     ConstellationContainerComponent,
+    CanvasComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

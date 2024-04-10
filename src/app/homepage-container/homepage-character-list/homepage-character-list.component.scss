@@ -69,7 +69,6 @@
     }
 
     &-card {
-        padding: .5rem 0;
         font-size: .95rem;
         text-align: center;
         color: $primary;
@@ -79,6 +78,10 @@
         text-shadow: 0 0 2px $primary;
         user-select: none;
         transition: .25s;
+
+        &-name {
+            padding: .5rem 0;
+        }
     }
 
     &-card:hover {
