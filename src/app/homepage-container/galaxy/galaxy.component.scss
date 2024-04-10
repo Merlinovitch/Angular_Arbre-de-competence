@@ -1,28 +1,93 @@
 .galaxy-wrapper {
+    position: relative;
     width: var(--galaxy-radius);
+    
     height: var(--galaxy-radius);
     animation: galaxy-rotation 300s linear infinite;
-    transform: rotateX(60deg) scale(2);
+    // transform: rotateX(60deg) scale(2);
+    transform-style: preserve-3d;
     border-radius: 50%;
-    overflow: hidden;
+    // overflow: hidden;
 }
+
+.galaxy-wrapper > * {
+    user-select: none;
+}
+
 .galaxy {
+    position: absolute;
     width: var(--galaxy-radius);
     height: var(--galaxy-radius);
-    transition: 3s;
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(../../../../src/assets/images/galaxy.webp);
     background-size: contain;
     background-position: center;
+    transition: 3s;
     transition-timing-function: ease-in;
-    overflow: hidden;
+    // transform: translateZ(-60px) scale(2);
+    transform-style: preserve-3d;
+    animation: appears 5s linear forwards;
+    animation-timing-function: ease-in-out;
+    filter: saturate(1.25) contrast(1.25);
+    // overflow: hidden;
+}
+
+@keyframes appears {
+    0% {
+        transform: translateZ(-60px) scale(0);
+    }
+    100% {
+        transform: translateZ(-60px) scale(2);
+    }
 }
 
 @keyframes galaxy-rotation {
     0% {
-        transform: rotateX(60deg) rotate(0deg) scale(2);
+        transform: rotateX(60deg) rotate(0deg)/*  scale(2) */;
     }
     100% {
-        transform: rotateX(60deg) rotate(360deg) scale(2);
+        transform: rotateX(60deg) rotate(360deg)/*  scale(2) */;
+    }
+}
+
+.galaxy-center {
+    width: 1px;
+    height: 100px;
+    background: transparent;
+    transform: rotate(45deg);
+    animation: galaxy-center-glow 10s linear infinite;
+}
+
+@keyframes galaxy-center-glow {
+    from, to {
+        box-shadow: 0 0 4px #FEFEFC,
+        0 0 8px #FEFEFC,
+        0 0 12px #FEFEFC,
+        0 0 20px #FEFEFC;
+    }
+    15%, 50% {
+        box-shadow: 0 0 2px #FEFEFC,
+        0 0 4px #FEFEFC,
+        0 0 8px #FEFEFC,
+        0 0 12px #FEFEFC,
+        0 0 20px #FEFEFC,
+        0 0 30px #FEFEFC,
+        0 0 40px #FEFEFC,
+        0 0 50px #FEFEFC,
+        0 0 60px #FEFEFC,
+        0 0 70px #FEFEFC,
+        0 0 80px #FEFEFC,
+        0 0 90px #FEFEFC,
+        0 0 100px #FEFEFC,
+        0 0 110px #FEFEFC,
+        0 0 120px #FEFEFC,
+        0 0 130px #FEFEFC,
+        0 0 140px #FEFEFC,
+        0 0 140px #FEFEFC,
+        0 0 150px #FEFEFC,
+        0 0 200px #FEFEFC,
+        0 0 300px #FEFEFC;
     }
 }

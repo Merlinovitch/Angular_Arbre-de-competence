@@ -7,11 +7,23 @@
     align-items: center;
     width: var(--galaxy-radius);
     height: var(--galaxy-radius);
-    animation: character-wrapper-rotation 300s linear infinite;
+    // animation: character-wrapper-rotation 300s linear infinite;
+    transform: scale(0);
+    animation: loads 5s linear forwards;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-delay: 3s;
     transform-style: preserve-3d;
     pointer-events: none;
 }
 
+@keyframes loads {
+    0% {
+        transform: scale(0) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
 @keyframes character-wrapper-rotation {
     0% {
         transform: rotateX(60deg) rotate(0deg);
@@ -46,7 +58,7 @@
     height: var(--size);
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     border: 2px solid $secondary;
     animation: character-rotation 300s linear infinite;
     pointer-events: all;
@@ -98,75 +110,120 @@
 
 .character-picture {
     position: relative;
+    bottom: 0;
     min-width: var(--size);
     height: 100%;
     display: flex;
     align-items: center;
     background-image: var(--url);
     background-size: auto 95%;
-    background-position: top center;
+    background-position: bottom center;
     background-repeat: no-repeat;
-    transition: .5s;
-    overflow: hidden;
+    transition: .5s, height 1s;
+    transform-origin: bottom;
     animation: hologram calc(var(--timer) * 2) linear infinite;
+
+}
+
+.character-picture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, $primary 5%, transparent 15%, transparent 15%);
+    z-index: -1;
+}
+
+.character-picture::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $secondary;
+    animation: .15s hologram-appears calc(calc(var(--timer) / 1.75)) linear forwards;
+}
+
+@keyframes hologram-appears {
+    100% {
+        height: 0%;
+    }
 }
 
 @keyframes hologram {
     from, to {
         filter:
         sepia(1)
-        hue-rotate(180deg)
+        hue-rotate(160deg)
         saturate(2)
-        drop-shadow(0 0 2px $primary)
-        drop-shadow(0 0 8px $primary);
+        drop-shadow(0 -2px 2px $primary)
+        drop-shadow(0 -8px 8px $primary);
         opacity: .75;
     }
-    26% {
+    15% {
+        transform: none;
         opacity: .75;
     }
-    27% {
+    15.1% {
+        transform: scaleY(.8);
+        opacity: .25;
+    }
+    15.2% {
+        opacity: .75;
+        transform: none;
+    }
+    15.3% {
+        opacity: .75;
+    }
+    15.4% {
         transform: none;
         opacity: 0;
     }
-    28%  {
-        transform: scaleX(.75);
+    15.5%  {
+        transform: scaleY(.8);
         opacity: .75;
     }
-    29% {
-        transform: none;
-        opacity: 0;
-    }
-    30% {
-        opacity: .75;
-    }
-    49% {
-        opacity: .75;
+    15.6%  {
         transform: none;
     }
     50% {
+        transform: none;
+        opacity: .75;
+    }
+    50.1% {
+        transform: scaleY(.95);
         opacity: .25;
-        transform: scaleX(.95);
     }
-    51% {
+    50.2% {
         opacity: .75;
         transform: none;
     }
-    76% {
+    50.3% {
         opacity: .75;
     }
-    77% {
-        transform: none;
-        opacity: 0;
-    }
-    78%  {
-        transform: scaleX(.75);
-        opacity: .75;
-    }
-    79% {
+    50.4% {
         transform: none;
         opacity: 0;
+    }
+    50.5%  {
+        transform: scaleY(.75);
+        opacity: .75;
+    }
+    50.6%  {
+        transform: none;
     }
     80% {
+        transform: none;
+        opacity: .75;
+    }
+    80.1% {
+        transform: scaleY(.5);
+        opacity: 0;
+    }
+    80.2% {
+        transform: none;
         opacity: .75;
     }
 }
@@ -186,11 +243,12 @@
 
 .character-content:hover {
     height: calc(var(--size) * 1.5) !important;
+    transition: height 1s;
 }
 
 .character-content:hover > .character-picture {
-    width: calc(var(--size) * 1.5);
-    height: calc(var(--size) * 1.5);
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 2);
     opacity: .9;
 }
 
