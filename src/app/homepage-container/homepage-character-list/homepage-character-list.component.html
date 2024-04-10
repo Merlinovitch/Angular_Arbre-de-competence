@@ -1,10 +1,7 @@
-<ul>
-    <li>liste des apprenants</li>
-    <li>patrice</li>
-    <li>lucien</li>
-    <li>louis</li>
-    <li>jean</li>
-    <li>marc</li>
-    <li>marie</li>
-    <li>jeanne</li>
-</ul>
+<div class="homepage-character-list-container">
+    <h3 class="homepage-character-list-container-title">Liste des apprenants</h3>
+
+    <div class="homepage-character-card" *ngFor="let char of chars">
+        <p class="homepage-character-card-name">{{ char.name }} {{ char.lastname }}</p>
+    </div>
+</div>

@@ -1,5 +1,25 @@
 @import "../../variables.scss";
 
-ul li {
-    color: $primary;
+.homepage-character {
+    &-list-container {
+        background-color: $secondary;
+        padding: 1rem;
+        border: 1px solid $primary;
+        color: $primary;
+
+
+        &-title {
+            font-size: 1rem;
+        }
+    }
+
+    &-card {
+        background-color: $primary;
+        color: $secondary;
+        padding: 1rem;
+        margin: 1rem;
+        border: 1px solid $secondary;
+        border-radius: 10px;
+        width: fit-content;
+    }
 }
