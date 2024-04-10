@@ -26,10 +26,7 @@ export class AppComponent {
   apprenant: any[] = [];
   constructor(private dataService: DataServiceService) {}
 
-  ngOnInit(): void {
-    this.dataService.getAllApprenant();
-    this.dataService.getAllCompetence();
-    this.dataService.getAllActivite();
-    this.dataService.getCompentenceByIdApprenant('1');
+  async ngOnInit(): Promise<void> {
+
   }
 }

@@ -1,0 +1,19 @@
+@import "../../variables.scss";
+
+:host {
+    display: none;
+}
+.tooltip{
+    width: 150px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $secondary;
+    box-shadow: 0 0 4px $primary,
+    inset 0 0 8px $primary,
+    inset 0 0 12px $primary;
+    pointer-events: none;
+    transition: .5s;
+    z-index: -2;
+}
