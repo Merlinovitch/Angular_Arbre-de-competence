@@ -69,6 +69,7 @@
     }
 
     &-card {
+        display: flex;
         font-size: .95rem;
         text-align: center;
         color: $primary;
@@ -80,14 +81,21 @@
         transition: .25s;
 
         &-name {
+            width: 100%;
             padding: .5rem 0;
+            color: $primary !important;
+            text-decoration: none !important;
         }
+        
     }
 
     &-card:hover {
         background: $primary;
-        color: $secondary;
         text-shadow: 0 0 2px $secondary;
         letter-spacing: .05rem;
+
+        a {
+            color: $secondary !important;
+        }
     }
 }

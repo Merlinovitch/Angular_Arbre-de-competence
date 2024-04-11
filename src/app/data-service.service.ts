@@ -46,7 +46,7 @@ export class DataServiceService {
         .select(`
         niveau,
         Apprenant: id_apprenant (name, lastname), 
-        Competence: id_competence (id,title)
+        Competence: id_competence (id, title)
         `)
         .eq('id_apprenant', idApprenant);
       return data;
@@ -54,6 +54,31 @@ export class DataServiceService {
       console.log(error);
       return [];
     }
+  }
+
+  addLevelToCharacters(chars: any)
+  {
+    chars.forEach((char: { [x: string]: string; }) => {
+      this.getCharacterSkillsById(char['id']).then(res => (char['lvl'] = `${res}`));
+    });
+  }
+
+  async getCharacterSkillsById(characterID: string):Promise<number>
+  {
+    const calcLvl = await this.getCompentenceByIdApprenant(characterID).then(res => this.calcCharacterGlobalLevel(res));
+    return calcLvl;
+  }
+
+  calcCharacterGlobalLevel(skills: any):number
+  {
+    let currentLevel = 0;
+
+    skills.forEach((skill: { niveau: number; }) => {
+      currentLevel += skill.niveau;
+    });
+    
+    const globalLevel = Math.floor(100 / (11 * 3) * currentLevel);
+    return globalLevel;
   }
 
   async getCompentenceByIdAndIdApprenant(
