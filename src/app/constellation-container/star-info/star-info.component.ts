@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./star-info.component.scss']
 })
 export class StarInfoComponent {
-  @Input() content: string = '';
+  @Input() tooltipContent: any;
 }

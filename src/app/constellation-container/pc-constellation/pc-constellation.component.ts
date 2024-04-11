@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StarInfoComponent } from '../star-info/star-info.component';
 import { DataServiceService } from 'src/app/data-service.service';
@@ -12,20 +12,12 @@ import { DataServiceService } from 'src/app/data-service.service';
 })
 export class PcConstellationComponent {
   tooltipContent = '';
-  data: any;
+  @Input() data:any;
   constructor(
     private renderer: Renderer2,
-    private dataService: DataServiceService
   ) {}
 
-  async ngOnInit(): Promise<void> {
-    try {
-      this.data = await this.dataService.getCompentenceByIdApprenant('1');
-    } catch (e) {
-      console.error('error', e);
-    }
-    console.log(this.data);
-  }
+
   async showStar(event: MouseEvent, elementId: string): Promise<any> {
     const tooltip = document.querySelector('app-star-info');
     if (tooltip) {
@@ -39,7 +31,7 @@ export class PcConstellationComponent {
       console.log(row.niveau);
       
       if (row) {
-        this.tooltipContent = row.niveau + ' ' + row.Competence.title;
+        this.tooltipContent = row
       }
   }
 }
