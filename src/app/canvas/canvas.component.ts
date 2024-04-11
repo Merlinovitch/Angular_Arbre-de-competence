@@ -12,6 +12,7 @@ export class CanvasComponent {
   canvas: any;
   ctx: any;
   cursor: any;
+  cursorIsInBrowser: any;
   sparkles: any;
   delay: any;
 
@@ -26,7 +27,9 @@ export class CanvasComponent {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
     this.ctx = this.canvas.getContext("2d");
-    this.cursor = document.querySelector("#cursor");
+    // this.cursor = document.querySelector("#cursor");
+    this.cursor = new Cursor(32, 3, 180, this.ctx);
+    this.cursorIsInBrowser = true;
     this.sparkles = [];
     this.delay = 4;
     this.animate();
@@ -40,8 +43,8 @@ export class CanvasComponent {
 
   @HostListener('window:mousemove', ['$event']) onMouseMove(e: any)
   { 
-    this.cursor.style.left = `calc(${e.x}px - 16px)`;
-    this.cursor.style.top = `calc(${e.y}px - 16px)`;
+    // this.cursor.style.left = `calc(${e.x}px - 16px)`;
+    // this.cursor.style.top = `calc(${e.y}px - 16px)`;
 
     if (
         e.target.classList.contains("character-content")
@@ -49,11 +52,14 @@ export class CanvasComponent {
         e.target.classList.contains("homepage-character-card-name")
     )
     {
-        this.cursor.classList.add("cursor-focus");
+        this.cursor.hover = true;
     } else {
-        this.cursor.classList.remove("cursor-focus");
+        this.cursor.hover = false;
     }
     
+    this.cursor.x = e.x;
+    this.cursor.y = e.y;
+
     this.delay--;
     if(this.delay === 0)
       {
@@ -77,13 +83,17 @@ export class CanvasComponent {
     }
   }
 
-  
   animate()
   {
     requestAnimationFrame(this.animate.bind(this));
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     
+    if (this.cursorIsInBrowser)
+      {
+        this.cursor.draw();
+      }
+
     this.sparkles.forEach((sparkle: { update: () => void; lifeTime: number; draw: () => void; }) => {
         sparkle.update();
         if (sparkle.lifeTime < 0)
@@ -93,12 +103,60 @@ export class CanvasComponent {
         sparkle.draw();
     });
   }
-
-
 }
 
-class Sparkle {
+class Cursor {
+  x: number;
+  y: number;
+  radius: number;
+  width: number;
+  color: number;
+  hover: boolean;
+  ctx: any;
 
+  constructor(radius: number, width: number, color: number, ctx: any)
+  {
+    this.x = 0,
+    this.y = 0,
+    this.hover = false,
+    this.radius = radius,
+    this.width = width,
+    this.color = color,
+    this.ctx = ctx
+  }
+
+  draw() {
+    if (this.hover === false)
+      {
+        this.ctx.strokeStyle = `hsl(${this.color}, 100%, 50%)`;
+        this.ctx.lineWidth = this.width;
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.x - this.radius / 2, this.y);
+        this.ctx.lineTo(this.x - 5, this.y);
+        this.ctx.moveTo(this.x + 5, this.y);
+        this.ctx.lineTo(this.x + this.radius / 2, this.y);
+        this.ctx.moveTo(this.x, this.y - this.radius / 2);
+        this.ctx.lineTo(this.x, this.y - 5);
+        this.ctx.moveTo(this.x, this.y + 5);
+        this.ctx.lineTo(this.x, this.y + this.radius / 2);
+        this.ctx.closePath();
+        this.ctx.stroke();
+      } else {
+        this.ctx.strokeStyle = `hsl(${this.color}, 100%, 50%)`;
+        this.ctx.lineWidth = this.width;
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.x - this.radius / 2 + 5, this.y);
+        this.ctx.lineTo(this.x + this.radius / 2 - 5, this.y);
+        this.ctx.moveTo(this.x, this.y - this.radius / 2 + 5);
+        this.ctx.lineTo(this.x, this.y + this.radius / 2 - 5);
+        this.ctx.closePath();
+        this.ctx.stroke();
+      }
+
+  }
+
+}
+class Sparkle {
   x: number;
   y: number;
   dirX: number;
