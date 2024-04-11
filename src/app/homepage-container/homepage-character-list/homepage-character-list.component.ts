@@ -28,7 +28,7 @@ export class HomepageCharacterListComponent {
     target?.classList.add("character-hover");
   }
 
-  removeFocus(characterID: number)
+  removeFocus()
   {
     const target = document.querySelector(`#character-${this.hoveredCharID}`);
     target?.classList.remove("character-hover");
@@ -42,7 +42,7 @@ export class HomepageCharacterListComponent {
       case "homepage-character-card-name":
         if (this.hoveredCharID !== null)
           {
-            this.removeFocus(this.hoveredCharID);
+            this.removeFocus();
           }
           
           this.hoveredCharID = e.target.id;
@@ -52,7 +52,7 @@ export class HomepageCharacterListComponent {
       default:
         if (this.hoveredCharID !== null)
           {
-            this.removeFocus(this.hoveredCharID);
+            this.removeFocus();
           }
       break;
     }
