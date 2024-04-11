@@ -243,34 +243,41 @@
     transition: .5s;
 }
 
-.character-content:hover {
+.character-content:hover,
+.character-hover {
     height: calc(var(--size) * 1.5) !important;
     transition: height 1s;
 }
 
-.character-content:hover > .character-picture {
+.character-content:hover > .character-picture,
+.character-hover > .character-picture {
     width: calc(var(--size) * 2);
     height: calc(var(--size) * 2);
     opacity: .9;
 }
 
-.character-content:hover .character-picture-border {
+.character-content:hover .character-picture-border,
+.character-hover .character-picture-border {
     height: 100%;
 }
 
 .character-content:hover span:nth-child(1),
-.character-content:hover span:nth-child(2) {
+.character-content:hover span:nth-child(2),
+.character-hover span:nth-child(1),
+.character-hover span:nth-child(2) {
     width: 75%;
     height: 75%;
 }
 
-.character-content:hover .tooltip {
+.character-content:hover .tooltip,
+.character-hover .tooltip {
     width: 150px;
     margin-right: 10px;
     padding-left: 10px;
 }
 
-.character-content:hover .tooltip p {
+.character-content:hover .tooltip p,
+.character-hover .tooltip p {
     animation: tooltip-hover-p 4s linear infinite;
 }
 
