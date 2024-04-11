@@ -58,6 +58,8 @@
           cy="382.89035"
           rx="10.739427"
           ry="9.7631149"
+          (mouseenter)="showStar($event,'34')"
+          (mouseleave)="hideStar($event)"
         />
         <ellipse
           style="fill: #ffdd55"
@@ -85,19 +87,93 @@
         />
       </g>
     </svg>
-    <svg class="constellation-svg-little" width="348" height="271.76401" viewBox="0 0 347.99997 271.76454" version="1.1" id="svg1" inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)" sodipodi:docname="constellation_pc_little.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-        
-        <g inkscape:label="Calque 1" inkscape:groupmode="layer" id="layer1">
-          <ellipse style="fill:#ffffff;stroke-width:0.626297" id="path2" ry="0.70539403" rx="87.552139" cy="-95.69397" cx="270.07104" transform="matrix(0.83468582,0.55072642,-0.3410515,0.94004461,0,0)"/>
-          <ellipse style="fill:#ffffff;stroke-width:0.7111" id="path2-8" ry="0.78805071" rx="101.02925" cy="315.78244" cx="33.216812" transform="matrix(0.73366229,-0.67951427,0.74517519,0.66686876,0,0)"/>
-          <ellipse style="fill:#ffffff;stroke-width:0.716326" id="path2-8-5" ry="0.80076236" rx="100.89238" cy="-82.276154" cx="-178.82765" transform="matrix(-0.75121437,-0.66005831,0.5023921,-0.86463991,0,0)"/>
-          <ellipse style="fill:#ffffff;stroke-width:0.620895" id="path2-6" ry="0.69425738" rx="87.428513" cy="-97.428078" cx="-35.10149" transform="matrix(-0.85106797,0.52505554,-0.64273707,-0.76608685,0,0)"/>
-          <ellipse style="fill:#ffdd55;stroke-width:0.700203" id="path11" cx="176.38379" cy="262.14331" rx="7.3255315" ry="7.0174384"/>
-          <ellipse style="fill:#ffdd55;stroke-width:0.700203" id="path11-09" cx="175.42007" cy="6.6886544" rx="7.3255315" ry="7.0174384"/>
-          <ellipse style="fill:#ffdd55;stroke-width:0.700203" id="path11-09-4" cx="341.46942" cy="111.81982" rx="7.3255315" ry="7.0174384"/>
-          <ellipse style="fill:#ffd42a;stroke-width:0.700203" id="path11-0" cx="8.3553762" cy="111.43728" rx="7.3255315" ry="7.0174384"/>
-        </g>
-      </svg>
+    <svg
+      class="constellation-svg-little"
+      width="348"
+      height="271.76401"
+      viewBox="0 0 347.99997 271.76454"
+      version="1.1"
+      id="svg1"
+      inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+      sodipodi:docname="constellation_pc_little.svg"
+      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg"
+    >
+      <g inkscape:label="Calque 1" inkscape:groupmode="layer" id="layer1">
+        <ellipse
+          style="fill: #ffffff; stroke-width: 0.626297"
+          id="path2"
+          ry="0.70539403"
+          rx="87.552139"
+          cy="-95.69397"
+          cx="270.07104"
+          transform="matrix(0.83468582,0.55072642,-0.3410515,0.94004461,0,0)"
+          
+        />
+        <ellipse
+          style="fill: #ffffff; stroke-width: 0.7111"
+          id="path2-8"
+          ry="0.78805071"
+          rx="101.02925"
+          cy="315.78244"
+          cx="33.216812"
+          transform="matrix(0.73366229,-0.67951427,0.74517519,0.66686876,0,0)"
+        />
+        <ellipse
+          style="fill: #ffffff; stroke-width: 0.716326"
+          id="path2-8-5"
+          ry="0.80076236"
+          rx="100.89238"
+          cy="-82.276154"
+          cx="-178.82765"
+          transform="matrix(-0.75121437,-0.66005831,0.5023921,-0.86463991,0,0)"
+        />
+        <ellipse
+          style="fill: #ffffff; stroke-width: 0.620895"
+          id="path2-6"
+          ry="0.69425738"
+          rx="87.428513"
+          cy="-97.428078"
+          cx="-35.10149"
+          transform="matrix(-0.85106797,0.52505554,-0.64273707,-0.76608685,0,0)"
+        />
+        <ellipse
+          style="fill: #ffdd55; stroke-width: 0.700203"
+          id="path11"
+          cx="176.38379"
+          cy="262.14331"
+          rx="7.3255315"
+          ry="7.0174384"
+        />
+        <ellipse
+          style="fill: #ffdd55; stroke-width: 0.700203"
+          id="path11-09"
+          cx="175.42007"
+          cy="6.6886544"
+          rx="7.3255315"
+          ry="7.0174384"
+        />
+        <ellipse
+          style="fill: #ffdd55; stroke-width: 0.700203"
+          id="path11-09-4"
+          cx="341.46942"
+          cy="111.81982"
+          rx="7.3255315"
+          ry="7.0174384"
+        />
+        <ellipse
+          style="fill: #ffd42a; stroke-width: 0.700203"
+          id="path11-0"
+          cx="8.3553762"
+          cy="111.43728"
+          rx="7.3255315"
+          ry="7.0174384"
+        />
+      </g>
+    </svg>
+    <app-star-info [tooltipContent]="tooltipContent"></app-star-info>
   </div>
   <div class="activity-title">
     <h2>Lock Constellation</h2>
