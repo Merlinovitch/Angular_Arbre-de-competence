@@ -46,7 +46,7 @@ export class DataServiceService {
         .select(`
         niveau,
         Apprenant: id_apprenant (name, lastname), 
-        Competence: id_competence (id,title)
+        Competence: id_competence (id, title)
         `)
         .eq('id_apprenant', idApprenant);
       return data;
