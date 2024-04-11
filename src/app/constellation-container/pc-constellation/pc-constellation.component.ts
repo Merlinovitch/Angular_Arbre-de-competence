@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StarInfoComponent } from '../star-info/star-info.component';
 import { DataServiceService } from 'src/app/data-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pc-constellation',
@@ -11,14 +12,35 @@ import { DataServiceService } from 'src/app/data-service.service';
   styleUrls: ['./pc-constellation.component.scss'],
 })
 export class PcConstellationComponent {
-  tooltipContent = '';
-  @Input() data:any;
+  tooltipContent = {
+    Competence : {
+      title: ""
+    }
+  };
+  data:any;
+  idApprenant: string = '';
   constructor(
+    private dataService: DataServiceService,
     private renderer: Renderer2,
-  ) {}
+    private route: ActivatedRoute
+  ) {
+    this.route.params.subscribe( parms=> this.idApprenant = parms["id"]);
+  }
 
+  async ngOnInit(): Promise<void> {
+    this.data="";
+    try {
+      this.data = await this.dataService.getCompentenceByIdApprenant(this.idApprenant);
+    } catch (e) {
+      console.error('error', e);
+    }
+    console.log(this.data);
+    
+  }
 
   async showStar(event: MouseEvent, elementId: string): Promise<any> {
+
+    
     const tooltip = document.querySelector('app-star-info');
     if (tooltip) {
       this.renderer.setStyle(tooltip, 'display', 'block');
