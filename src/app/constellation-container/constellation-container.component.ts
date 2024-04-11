@@ -4,6 +4,8 @@ import { PcConstellationComponent } from './pc-constellation/pc-constellation.co
 import { LockConstellationComponent } from './lock-constellation/lock-constellation.component';
 import { FuseeConstellationComponent } from './fusee-constellation/fusee-constellation.component';
 import { StatComponent } from './stat/stat.component';
+import { DataServiceService } from '../data-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-constellation-container',
@@ -14,4 +16,17 @@ import { StatComponent } from './stat/stat.component';
 })
 export class ConstellationContainerComponent {
 
+  data: any;
+  constructor(private dataService: DataServiceService, private route:ActivatedRoute){
+    this.route.params.subscribe( parms=> console.log(parms));
+  }
+
+  async ngOnInit(): Promise<void> {
+    try {
+      this.data = await this.dataService.getCompentenceByIdApprenant('1');
+    } catch (e) {
+      console.error('error', e);
+    }
+    console.log(this.data);
+  }
 }

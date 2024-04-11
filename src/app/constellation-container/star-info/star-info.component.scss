@@ -1,0 +1,42 @@
+@import "../../variables.scss";
+
+:host {
+    display: none;
+}
+.tooltip{
+    width: 300px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $secondary;
+    box-shadow: 0 0 4px $primary,
+    inset 0 0 8px $primary,
+    inset 0 0 12px $primary;
+    font-family: 'Nasalization';
+    animation: float-body 5s infinite alternate ease-in-out;
+}
+
+.tooltip-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.level{
+    margin-left: auto;
+    text-align: right;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 0 0 4px $primary,
+    inset 0 0 8px $primary,
+    inset 0 0 12px $primary;
+
+}
+.title{
+    padding-bottom: 5px;
+}
+@keyframes float-body {
+    100%{
+        translate: 0 -0.5em;
+        scale: 1.015;
+    }
+}
+  
