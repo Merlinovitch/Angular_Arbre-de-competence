@@ -5,6 +5,7 @@ import { LockConstellationComponent } from './lock-constellation/lock-constellat
 import { FuseeConstellationComponent } from './fusee-constellation/fusee-constellation.component';
 import { StatComponent } from './stat/stat.component';
 import { DataServiceService } from '../data-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-constellation-container',
@@ -16,7 +17,9 @@ import { DataServiceService } from '../data-service.service';
 export class ConstellationContainerComponent {
 
   data: any;
-  constructor(private dataService: DataServiceService){}
+  constructor(private dataService: DataServiceService, private route:ActivatedRoute){
+    this.route.params.subscribe( parms=> console.log(parms));
+  }
 
   async ngOnInit(): Promise<void> {
     try {
