@@ -26,10 +26,7 @@ export class CharacterComponent {
   {
     this.chars = await this.dataService.getAllApprenant();
     
-    this.addLevelToCharacters();
-    
-
-    // this.getCharactersSkills();
+    this.dataService.addLevelToCharacters(this.chars);
 
     this.timers = [
       "11",
@@ -48,35 +45,4 @@ export class CharacterComponent {
 
   }
   
-  addLevelToCharacters()
-  {
-    this.chars.forEach((char: { [x: string]: string; }) => {
-      this.getCharacterSkillsById(char['id']).then(res => (char['lvl'] = `${res}`));
-    });
-  }
-  
-  getCharactersSkills():void
-  {
-    this.chars.forEach((character: any) => {
-      this.getCharacterSkillsById(character.id);
-    });
-  }
-
-  async getCharacterSkillsById(characterID: string):Promise<number>
-  {
-    const calcLvl = await this.dataService.getCompentenceByIdApprenant(characterID).then(res => this.calcCharacterGlobalLevel(res));
-    return calcLvl;
-  }
-
-  calcCharacterGlobalLevel(skills: any):number
-  {
-    let currentLevel = 0;
-
-    skills.forEach((skill: { niveau: number; }) => {
-      currentLevel += skill.niveau;
-    });
-    
-    const globalLevel = 100 / (11 * 3) * currentLevel;
-    return globalLevel;
-  }
 }

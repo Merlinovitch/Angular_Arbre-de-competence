@@ -44,8 +44,8 @@ export class HomepageCharacterListComponent {
           {
             this.removeFocus();
           }
-          
-          this.hoveredCharID = e.target.id;
+          const id = e.target.id;
+          this.hoveredCharID = id.substring(15);
           this.addFocus();
       break;
       
