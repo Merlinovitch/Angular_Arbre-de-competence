@@ -1,10 +1,10 @@
 <div class="character-wrapper">
     <div *ngFor="let char of chars ; index as i" class="character" style="--url: url(../../../../assets/images/characters/{{ char.photo_url }}.png); --angle: {{ i + 1 }}; --timer: {{ timers[i] }}s; --size: 5rem">
-        <div class="character-content" id="{{ char.id }}">
+        <div class="character-content" id="character-{{ char.id }}">
             <span></span>
             <span></span>
             <span></span>
-            <div class="character-picture character-{{i}}"></div>
+            <div class="character-picture character-{{ i }}"></div>
             <div class="tooltip">
                 <div class="character-picture-border"></div>
                 <h2>{{ char.name }}</h2>
