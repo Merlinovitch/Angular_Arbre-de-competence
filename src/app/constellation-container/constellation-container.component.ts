@@ -17,16 +17,5 @@ import { ActivatedRoute } from '@angular/router';
 export class ConstellationContainerComponent {
 
   data: any;
-  constructor(private dataService: DataServiceService, private route:ActivatedRoute){
-    this.route.params.subscribe( parms=> console.log(parms));
-  }
-
-  async ngOnInit(): Promise<void> {
-    try {
-      this.data = await this.dataService.getCompentenceByIdApprenant('1');
-    } catch (e) {
-      console.error('error', e);
-    }
-    console.log(this.data);
-  }
+  
 }

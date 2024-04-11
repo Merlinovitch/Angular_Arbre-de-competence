@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { DataServiceService } from './data-service.service';
 import { GalaxyComponent } from './homepage-container/galaxy/galaxy.component';
@@ -25,10 +25,8 @@ import { CanvasComponent } from './canvas/canvas.component';
 })
 export class AppComponent {
   title = 'SkillTree';
-  apprenant: any[] = [];
+  data: any;
   constructor(private dataService: DataServiceService) {}
 
-  async ngOnInit(): Promise<void> {
-
-  }
+  
 }

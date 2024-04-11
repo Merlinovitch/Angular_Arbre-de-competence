@@ -17,6 +17,7 @@
 }
 .img_constellation{
     opacity: 0;
+    transition: 2s;
     fill: #68e28d;
     animation: fadeOut 2s;
 }
@@ -28,16 +29,4 @@
     0 0 100px 60px #f0f, /* middle magenta */
     0 0 140px 90px #0ff; /* outer cyan */
     opacity: 1;
-    animation: fadeIn 2s;
-    
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
 }
