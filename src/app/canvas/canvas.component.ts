@@ -14,11 +14,15 @@ export class CanvasComponent {
   cursor: any;
   cursorIsInBrowser: any;
   sparkles: any;
+  beam: any;
   delay: any;
+  soundDelay: any;
+  hover: any;
 
   constructor()
   {
-    
+    this.beam = new Audio();
+    this.beam = document.createElement('audio');
   }
 
   ngOnInit()
@@ -27,11 +31,12 @@ export class CanvasComponent {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
     this.ctx = this.canvas.getContext("2d");
-    // this.cursor = document.querySelector("#cursor");
     this.cursor = new Cursor(32, 3, 180, this.ctx);
     this.cursorIsInBrowser = true;
     this.sparkles = [];
     this.delay = 4;
+    this.soundDelay = false;
+    this.hover = false;
     this.animate();
   }
 
@@ -43,9 +48,6 @@ export class CanvasComponent {
 
   @HostListener('window:mousemove', ['$event']) onMouseMove(e: any)
   { 
-    // this.cursor.style.left = `calc(${e.x}px - 16px)`;
-    // this.cursor.style.top = `calc(${e.y}px - 16px)`;
-
     if (
         e.target.classList.contains("character-content")
         ||
@@ -56,8 +58,10 @@ export class CanvasComponent {
         e.target.classList.contains("activity-title")
     )
     {
+        this.hover = true;
         this.cursor.hover = true;
     } else {
+        this.hover = false;
         this.cursor.hover = false;
     }
     
@@ -74,8 +78,25 @@ export class CanvasComponent {
   }
 
   @HostListener('window:mousedown', ['$event']) onMouseDown(e: any)
-  { 
-    this.spawnSparkles(e.x, e.y, 200, 3, this.sparkles);
+  {
+    if (this.soundDelay === false)
+      {
+        this.soundDelay = true;
+
+        if (this.hover)
+          {
+            this.beam.setAttribute('src', "../../assets/sounds/click.mp3");
+          } else {
+            this.beam.setAttribute('src', "../../assets/sounds/beam.mp3");
+          }
+        this.spawnSparkles(e.x, e.y, 200, 3, this.sparkles);
+        this.beam.play();
+
+        setTimeout(() => {
+          this.soundDelay = false;
+        }, 1000);
+      }
+
   }
 
   spawnSparkles(x: number, y: number, count: number, speed: number, sparkles: any)
