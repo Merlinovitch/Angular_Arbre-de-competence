@@ -18,10 +18,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ConstellationContainerComponent {
 
   data: any;
+  soundsEnabled: any;
+  warpSound: any;
   
   constructor(private router: Router)
   {
-
+    this.warpSound = document.createElement('audio');
+    this.warpSound.setAttribute('src', "../../assets/sounds/warp.mp3");
+    this.warpSound.setAttribute('preload', "auto");
+    this.soundsEnabled = document.querySelector(".mute-volume");
   }
 
   @HostListener('window:click', ['$event']) onMouseClick(e: any)
@@ -30,6 +35,14 @@ export class ConstellationContainerComponent {
     {
       case "back-button":
         const loadingScreen: any = document.querySelector(".container-loader");
+
+        if (this.soundsEnabled.classList.contains("enable-sounds"))
+          {
+            setTimeout(() => {
+              this.warpSound.play();
+            }, 1000);
+          }
+
         loadingScreen.classList.toggle("loader-visible");
         setTimeout(() => {
           loadingScreen.classList.toggle("loader-visible");

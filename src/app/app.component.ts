@@ -7,6 +7,7 @@ import { HomepageContainerComponent } from './homepage-container/homepage-contai
 import { FooterComponent } from './footer/footer.component';
 import { ConstellationContainerComponent } from './constellation-container/constellation-container.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { MuteVolumeComponent } from './mute-volume/mute-volume.component';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { CanvasComponent } from './canvas/canvas.component';
     FooterComponent,
     ConstellationContainerComponent,
     CanvasComponent,
+    MuteVolumeComponent,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

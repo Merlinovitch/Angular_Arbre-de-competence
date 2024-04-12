@@ -9,11 +9,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./canvas.component.scss']
 })
 export class CanvasComponent {
+
   canvas: any;
   ctx: any;
   cursor: any;
   cursorIsInBrowser: any;
   sparkles: any;
+  public soundsEnabled: any;
   beamSound: any;
   clickSound: any;
   charSounds: any;
@@ -23,6 +25,7 @@ export class CanvasComponent {
 
   constructor()
   {
+    this.soundsEnabled = false;
     this.beamSound = document.createElement('audio');
     this.beamSound.setAttribute('src', "../../assets/sounds/beam.mp3");
     this.beamSound.setAttribute('preload', "auto");
@@ -44,6 +47,7 @@ export class CanvasComponent {
     this.delay = 4;
     this.clickEffectDelay = false;
     this.hover = false;
+    this.canvas.click();
 
     for (let i = 0; i < 12; i++)
       {
@@ -72,20 +76,25 @@ export class CanvasComponent {
         e.target.classList.contains("back-button")
         ||
         e.target.classList.contains("activity-title")
+        ||
+        e.target.classList.contains("mute-volume")
     )
     {
-        if (e.target.classList.contains("homepage-character-card-name") && this.hover === false)
-          {
-            const id = +e.target.id.substring(15);
-            this.charSounds[id - 1].play();
-          }
-        if (e.target.classList.contains("character-content") && this.hover === false)
-          {
-            const id = +e.target.id.substring(10);
-            this.charSounds[id - 1].play();
-          } else if (this.hover === false) {
-            this.charSounds[0].play();
-          }
+      if (this.hover === false && this.soundsEnabled === true)
+        {
+          if (e.target.classList.contains("homepage-character-card-name"))
+            {
+              const id = +e.target.id.substring(15);
+              this.charSounds[id - 1].play();
+            } else if (e.target.classList.contains("character-content"))
+            {
+              const id = +e.target.id.substring(10);
+              this.charSounds[id - 1].play();
+            } else if (!e.target.classList.contains("character-content")) {
+              this.charSounds[0].play();
+            }
+        }
+       
         this.hover = true;
         this.cursor.hover = true;
     } else {
@@ -107,17 +116,32 @@ export class CanvasComponent {
 
   @HostListener('window:mousedown', ['$event']) onMouseDown(e: any)
   {
+    if (e.target.classList.contains("mute-volume")) {
+      const muteBtn: any = document.querySelector(".mute-volume");
+      if (this.soundsEnabled === false)
+        {
+          this.soundsEnabled = true;
+          muteBtn.classList.add("enable-sounds");
+        } else {
+          this.soundsEnabled = false;
+          muteBtn.classList.remove("enable-sounds");
+        }
+    }
     if (this.clickEffectDelay === false)
       {
         this.clickEffectDelay = true;
 
-        if (this.hover)
-          {
-            this.clickSound.play();
-          } else {
-            this.beamSound.play();
-          }
         this.spawnSparkles(e.x, e.y, 200, 3, this.sparkles);
+
+        if (this.soundsEnabled)
+          {
+            if (this.hover)
+              {
+                this.clickSound.play();
+              } else {
+                this.beamSound.play();
+              }
+          }
 
         setTimeout(() => {
           this.clickEffectDelay = false;
@@ -154,6 +178,11 @@ export class CanvasComponent {
         }
         sparkle.draw();
     });
+  }
+
+  public getSoundsEnabled():boolean
+  {
+    return this.soundsEnabled;
   }
 }
 
