@@ -331,3 +331,37 @@
         margin-bottom: 20px;
     }
 }
+
+
+@media screen and (max-width: 680px) {
+    
+    .character-wrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 8rem;
+        padding: 2rem 3rem;
+        animation: none;
+    }
+    .character {
+        position: relative;
+        width: 100%;
+        transform: none;
+        animation: none;
+    }
+    .character-content {
+        position: relative;
+        width: 100%;
+        animation: none;
+        transform: none;
+    }
+    .tooltip {
+        width: 150px;
+        margin-right: 10px;
+        padding-left: 10px;
+    }
+
+}
