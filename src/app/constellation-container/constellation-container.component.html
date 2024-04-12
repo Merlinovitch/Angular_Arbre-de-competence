@@ -7,10 +7,11 @@
     <p>Back to Galaxy</p>
   </div>
   <div class="container-constellation">
-    <app-pc-constellation></app-pc-constellation>
-    <app-lock-constellation></app-lock-constellation>
-    <app-fusee-constellation></app-fusee-constellation>
+    <app-pc-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)"></app-pc-constellation>
+    <app-lock-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)"></app-lock-constellation>
+    <app-fusee-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)"></app-fusee-constellation>
   </div>
+  <app-star-info [tooltipContent]="tooltipContent"></app-star-info>
 
   <app-stat></app-stat>
 </div>

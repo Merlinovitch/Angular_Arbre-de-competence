@@ -10,4 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class StarInfoComponent {
   @Input() tooltipContent: any;
+
+  constructor(){    
+  }
+
+  
+  
+  
 }
