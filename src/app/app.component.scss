@@ -6,10 +6,24 @@ app-canvas {
 app-footer {
     position: absolute;
     bottom: 0;
+    width: 100%;
 }
 
 app-mute-volume {
     position: absolute;
     top: 1rem;
     right: 1rem;
+}
+
+@media screen and (max-width: 680px) {
+    app-footer {
+        position: relative;
+        bottom: 0;
+    }
+
+    app-mute-volume {
+        top: 0;
+        right: 0;
+        transform: scale(.65);
+    }
 }
