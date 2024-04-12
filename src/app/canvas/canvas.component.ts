@@ -16,20 +16,20 @@ export class CanvasComponent {
   sparkles: any;
   beamSound: any;
   clickSound: any;
+  charSounds: any;
   delay: any;
   clickEffectDelay: any;
   hover: any;
 
   constructor()
   {
-    this.beamSound = new Audio();
     this.beamSound = document.createElement('audio');
     this.beamSound.setAttribute('src', "../../assets/sounds/beam.mp3");
     this.beamSound.setAttribute('preload', "auto");
-    this.clickSound = new Audio();
     this.clickSound = document.createElement('audio');
     this.clickSound.setAttribute('src', "../../assets/sounds/click.mp3");
     this.clickSound.setAttribute('preload', "auto");
+    this.charSounds = [];
   }
 
   ngOnInit()
@@ -44,6 +44,15 @@ export class CanvasComponent {
     this.delay = 4;
     this.clickEffectDelay = false;
     this.hover = false;
+
+    for (let i = 0; i < 12; i++)
+      {
+        const sound = document.createElement('audio');
+        sound.setAttribute('src', "../../assets/sounds/menu.mp3");
+        sound.setAttribute('preload', "auto");
+        this.charSounds.push(sound);
+      }
+
     this.animate();
   }
 
@@ -65,6 +74,18 @@ export class CanvasComponent {
         e.target.classList.contains("activity-title")
     )
     {
+        if (e.target.classList.contains("homepage-character-card-name") && this.hover === false)
+          {
+            const id = +e.target.id.substring(15);
+            this.charSounds[id - 1].play();
+          }
+        if (e.target.classList.contains("character-content") && this.hover === false)
+          {
+            const id = +e.target.id.substring(10);
+            this.charSounds[id - 1].play();
+          } else if (this.hover === false) {
+            this.charSounds[0].play();
+          }
         this.hover = true;
         this.cursor.hover = true;
     } else {
