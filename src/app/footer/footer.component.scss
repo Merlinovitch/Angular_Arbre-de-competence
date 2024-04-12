@@ -1,6 +1,30 @@
 @import '../variables.scss';
 
 * {
-    background-color: $secondary;
     color: $primary;
+    font-family: 'OriginTech';
+    text-shadow: 0 0 2px $primary;
+    letter-spacing: .05rem;
+    user-select: none;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1rem 2rem;
+    opacity: .9;
+}
+.contributors {
+
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: .875rem;
+
+        &:nth-child(1) {
+            font-size: 1.2rem;
+        }
+    }
 }
