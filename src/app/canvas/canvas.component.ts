@@ -23,6 +23,7 @@ export class CanvasComponent {
   {
     this.beam = new Audio();
     this.beam = document.createElement('audio');
+    this.beam.setAttribute('src', "../../assets/sounds/beam.mp3");
   }
 
   ngOnInit()
