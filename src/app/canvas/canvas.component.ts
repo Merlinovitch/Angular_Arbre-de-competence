@@ -14,16 +14,22 @@ export class CanvasComponent {
   cursor: any;
   cursorIsInBrowser: any;
   sparkles: any;
-  beam: any;
+  beamSound: any;
+  clickSound: any;
   delay: any;
-  soundDelay: any;
+  clickEffectDelay: any;
   hover: any;
 
   constructor()
   {
-    this.beam = new Audio();
-    this.beam = document.createElement('audio');
-    this.beam.setAttribute('src', "../../assets/sounds/beam.mp3");
+    this.beamSound = new Audio();
+    this.beamSound = document.createElement('audio');
+    this.beamSound.setAttribute('src', "../../assets/sounds/beam.mp3");
+    this.beamSound.setAttribute('preload', "auto");
+    this.clickSound = new Audio();
+    this.clickSound = document.createElement('audio');
+    this.clickSound.setAttribute('src', "../../assets/sounds/click.mp3");
+    this.clickSound.setAttribute('preload', "auto");
   }
 
   ngOnInit()
@@ -36,7 +42,7 @@ export class CanvasComponent {
     this.cursorIsInBrowser = true;
     this.sparkles = [];
     this.delay = 4;
-    this.soundDelay = false;
+    this.clickEffectDelay = false;
     this.hover = false;
     this.animate();
   }
@@ -80,22 +86,21 @@ export class CanvasComponent {
 
   @HostListener('window:mousedown', ['$event']) onMouseDown(e: any)
   {
-    if (this.soundDelay === false)
+    if (this.clickEffectDelay === false)
       {
-        this.soundDelay = true;
+        this.clickEffectDelay = true;
 
         if (this.hover)
           {
-            this.beam.setAttribute('src', "../../assets/sounds/click.mp3");
+            this.clickSound.play();
           } else {
-            this.beam.setAttribute('src', "../../assets/sounds/beam.mp3");
+            this.beamSound.play();
           }
         this.spawnSparkles(e.x, e.y, 200, 3, this.sparkles);
-        this.beam.play();
 
         setTimeout(() => {
-          this.soundDelay = false;
-        }, 1000);
+          this.clickEffectDelay = false;
+        }, 500);
       }
 
   }
