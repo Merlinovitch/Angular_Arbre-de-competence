@@ -25,6 +25,7 @@
         transition: .5s;
         pointer-events: none;
         z-index: 99999999;
+        // opacity: 0 !important;
     }
 
     .back-button {
@@ -40,7 +41,7 @@
         0 0 8px $primary,
         0 0 16px $primary;
         font-family: 'OriginTech';
-        opacity: .75;
+        opacity: .85;
         
         > * {
             pointer-events: none;
@@ -190,7 +191,12 @@
         text-shadow: 0 0 2px $primary;
         user-select: none;
         overflow: visible;
+        opacity: .85;
         z-index: 1;
+
+        > * {
+            pointer-events: none;
+        }
 
         span {
             position: absolute;
