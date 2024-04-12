@@ -8,6 +8,7 @@
     transform-style: preserve-3d;
     border-radius: 50%;
     pointer-events: none;
+    transition-timing-function: ease-out;
     // overflow: hidden;
 }
 
@@ -25,8 +26,8 @@
     background-image: url(../../../../src/assets/images/galaxy.webp);
     background-size: contain;
     background-position: center;
-    transition: 3s;
-    transition-timing-function: ease-in;
+    transition: 2.5s;
+    // transition-timing-function: ease-out;
     transform: translateZ(-60px) scale(2);
     transform-style: preserve-3d;
     // animation: appears 5s linear forwards;

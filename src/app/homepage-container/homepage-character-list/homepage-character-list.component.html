@@ -4,7 +4,6 @@
     <h3 class="homepage-character-list-container-title">Liste des apprenants</h3>
 
     <div class="homepage-character-card" *ngFor="let char of chars">
-        <a routerLink="/constellation/{{ char.id }}" class="homepage-character-card-name" id="character-list-{{ char.id }}">{{ char.name }} {{ char.lastname }}</a>
-
+        <p class="homepage-character-card-name" id="character-list-{{ char.id }}">{{ char.name }} {{ char.lastname }}</p>
     </div>
 </div>

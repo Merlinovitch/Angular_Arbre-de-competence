@@ -11,6 +11,7 @@
         background-color: $secondary;
         padding: 1rem;
         color: $primary;
+        opacity: .75;
         overflow: visible;
         z-index: 1;
 
@@ -94,7 +95,7 @@
         text-shadow: 0 0 2px $secondary;
         letter-spacing: .05rem;
 
-        a {
+        p {
             color: $secondary !important;
         }
     }
