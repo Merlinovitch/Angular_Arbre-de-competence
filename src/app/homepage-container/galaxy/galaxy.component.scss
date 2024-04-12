@@ -94,3 +94,31 @@
         0 0 300px #FEFEFC;
     }
 }
+
+@media screen and (max-width: 680px) {
+    app-character {
+        position: relative;
+        top: 0;
+        align-items: flex-start;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        width: 100%;
+        height: auto;
+    }
+    .galaxy-wrapper {
+        position: relative;
+        left: 0;
+        width: 100%;
+        align-items: flex-start;
+        height: auto;
+        animation: none;
+        transform: none;
+        transform-style:flat;
+    }
+
+    .galaxy {
+        position: fixed;
+        top: 0;
+        transform: none;
+    }
+}

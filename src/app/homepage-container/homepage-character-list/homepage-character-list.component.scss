@@ -104,3 +104,12 @@
         }
     }
 }
+
+@media screen and (max-width: 680px) {
+    .homepage-character-list-container {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+
+}
