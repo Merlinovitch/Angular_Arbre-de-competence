@@ -7,10 +7,10 @@
   </p>
 </div>
 <div class="picture-container">
-  <img src="../../../assets/images/characters/Alex-200.png" alt="" />
+  <img src="../../../assets/images/characters/{{ data[0]?.photo_url }}.png"
+    alt="{{ data[0]?.name }} {{ data[0]?.lastname }}" />
 </div>
 <div class="stat-right">
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam consectetur,
-  quia quo eos totam minus distinctio consequuntur doloribus, provident illo
-  sint culpa assumenda accusamus veniam nemo eligendi ut sunt atque.
+  <p>{{ data[0]?.name }} {{ data[0]?.lastname }}</p><br>
+  <p> {{ calculateAge(data[0]?.birthdate)}} ans</p>
 </div>
