@@ -19,6 +19,20 @@ export class DataServiceService {
     }
   }
 
+  async getApprenantById(id: string |  null) {
+    try {
+      const { data, error } = await this.supabase
+        .from('Apprenant')
+        .select('*')
+        .eq('id', id);
+        console.log('Get apprenant by id :', data);
+      return data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  }
+
   async getAllCompetence() {
     try {
       const { data, error } = await this.supabase.from('Competence').select();

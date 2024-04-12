@@ -4,6 +4,6 @@ import { ConstellationContainerComponent } from './constellation-container/const
 import { HomepageContainerComponent } from './homepage-container/homepage-container.component';
 
 export const routes: Routes = [
-  { component:HomepageContainerComponent, path:''},
+  { component: HomepageContainerComponent, path:''},
   { component: ConstellationContainerComponent, path: 'constellation/:id'},
 ];
