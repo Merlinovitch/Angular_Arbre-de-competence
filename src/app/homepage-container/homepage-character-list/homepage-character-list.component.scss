@@ -11,7 +11,7 @@
         background-color: $secondary;
         padding: 1rem;
         color: $primary;
-        opacity: .75;
+        opacity: .85;
         overflow: visible;
         z-index: 1;
 
@@ -92,6 +92,10 @@
 
     &-card:hover {
         background: $primary;
+        box-shadow: 0 0 4px $primary,
+        0 0 8px $primary,
+        0 0 16px $primary,
+        inset 0 0 8px $primary;
         text-shadow: 0 0 2px $secondary;
         letter-spacing: .05rem;
 

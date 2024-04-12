@@ -50,6 +50,10 @@ export class CanvasComponent {
         e.target.classList.contains("character-content")
         ||
         e.target.classList.contains("homepage-character-card-name")
+        ||
+        e.target.classList.contains("back-button")
+        ||
+        e.target.classList.contains("activity-title")
     )
     {
         this.cursor.hover = true;
