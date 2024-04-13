@@ -145,26 +145,26 @@
 }
 
 .container-constellation {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding-top: 3rem;
+
+  > * {
+    width: 30%;
+    height: 100%;
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    padding-top: 3rem;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: self-end;
+  }
 
-    > * {
-        width: 30%;
-        height: 100%;
-        display: flex;
-        // flex-direction: column;
-        justify-content: center;
-        align-items: self-end;
-    }
-
-    .constellation-border {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  .constellation-border {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 // svg {
 //     mix-blend-mode:soft-light;
@@ -193,6 +193,8 @@
     overflow: visible;
     opacity: 0.85;
     z-index: 1;
+    font-size: small;
+    text-align: center;
 
     > * {
       pointer-events: none;
@@ -260,10 +262,10 @@
 }
 
 .stat-container img {
-    --timer: 10s;
-    // border-radius: 50%;
-    animation: hologram calc(var(--timer) * 2) linear infinite;
-    pointer-events: none;
+  --timer: 10s;
+  // border-radius: 50%;
+  animation: hologram calc(var(--timer) * 2) linear infinite;
+  pointer-events: none;
 }
 
 .picture-container {

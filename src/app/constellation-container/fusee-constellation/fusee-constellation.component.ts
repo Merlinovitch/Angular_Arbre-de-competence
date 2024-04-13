@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StarInfoComponent } from '../star-info/star-info.component';
 import { DataServiceService } from 'src/app/data-service.service';
@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FuseeConstellationComponent {
   idApprenant: string = '';
+  @Input() activityTitle: string | undefined;
   @Output()
   public idStarHover: EventEmitter<{string: string,event :Event}> = new EventEmitter<{string: string,event :Event}>();
   @Output()

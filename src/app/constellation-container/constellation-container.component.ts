@@ -25,6 +25,7 @@ export class ConstellationContainerComponent {
     }
   };
   data: any;
+  activities: any;
   soundsEnabled: any;
   warpSound: any;
   idApprenant: string = "";
@@ -52,6 +53,7 @@ export class ConstellationContainerComponent {
     this.data="";
     try {
       this.data = await this.dataService.getCompentenceByIdApprenant(this.idApprenant);
+      this.activities = await this.dataService.getAllActivite();
     } catch (e) {
       console.error('error', e);
     }
