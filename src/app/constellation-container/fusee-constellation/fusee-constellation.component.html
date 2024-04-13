@@ -72,28 +72,7 @@
         inkscape:label="star"
         transform="translate(-2.0999527,-2.9258249)"
       >
-        <path
-          d="m 373.4608,5.099742 c -3.69445,4.11e-4 -6.68921,2.631578 -6.68943,5.87729 -9.8e-4,3.246443 2.99414,5.878792 6.68943,5.879191 3.69529,-3.99e-4 6.6904,-2.632748 6.68941,-5.879191 -2.3e-4,-3.245712 -2.99497,-5.876879 -6.68941,-5.87729 z"
-          id="path2"
-          sodipodi:nodetypes="ccccc"
-          style="display: inline; fill: #ffffff; stroke-width: 1.0216"
-          (mouseenter)="showStar('42',$event)" (mouseleave)="hideStar()"
-        />
-        <path
-          d="m 179.77321,365.00854 c -3.69446,4.1e-4 -6.68921,2.63158 -6.68944,5.87729 -9.8e-4,3.24645 2.99414,5.87879 6.68944,5.87919 3.69529,-4e-4 6.6904,-2.63274 6.6894,-5.87919 -2.2e-4,-3.24571 -2.99496,-5.87688 -6.6894,-5.87729 z"
-          id="path2-6"
-          sodipodi:nodetypes="ccccc"
-          style="display: inline; fill: #ffffff; stroke-width: 1.0216"
-          (mouseenter)="showStar('43',$event)" (mouseleave)="hideStar()"
-        />
-        <path
-          d="m 8.7893929,193.37487 c -3.69446,4.1e-4 -6.68921,2.63157 -6.68944,5.87729 -9.8e-4,3.24644 2.99414,5.87879 6.68944,5.87919 3.6952901,-4e-4 6.6904001,-2.63275 6.6894001,-5.87919 -2.2e-4,-3.24572 -2.99496,-5.87688 -6.6894001,-5.87729 z"
-          id="path2-1"
-          sodipodi:nodetypes="ccccc"
-          style="display: inline; fill: #ffffff; stroke-width: 1.0216"
-          (mouseenter)="showStar('44',$event)" (mouseleave)="hideStar()"
-        />
-        <path
+      <path
           style="fill: none; stroke: #ffffff; stroke-width: 1.30629"
           d="M 9.3012429,198.81496 373.51609,10.62013"
           id="path15"
@@ -103,6 +82,28 @@
           d="M 373.7755,10.871053 179.80077,371.0678"
           id="path16"
         />
+        <path
+          d="m 373.4608,5.099742 c -3.69445,4.11e-4 -6.68921,2.631578 -6.68943,5.87729 -9.8e-4,3.246443 2.99414,5.878792 6.68943,5.879191 3.69529,-3.99e-4 6.6904,-2.632748 6.68941,-5.879191 -2.3e-4,-3.245712 -2.99497,-5.876879 -6.68941,-5.87729 z"
+          id="path2"
+          sodipodi:nodetypes="ccccc"
+          [ngClass]="{'thicken-niveau-0': this.star42 === 0,'thicken-niveau-1': this.star42 === 1,'thicken-niveau-2': this.star42 === 2,'thicken-niveau-3': this.star42 === 3}"
+          (mouseenter)="showStar('42',$event)" (mouseleave)="hideStar()"
+        />
+        <path
+          d="m 179.77321,365.00854 c -3.69446,4.1e-4 -6.68921,2.63158 -6.68944,5.87729 -9.8e-4,3.24645 2.99414,5.87879 6.68944,5.87919 3.69529,-4e-4 6.6904,-2.63274 6.6894,-5.87919 -2.2e-4,-3.24571 -2.99496,-5.87688 -6.6894,-5.87729 z"
+          id="path2-6"
+          sodipodi:nodetypes="ccccc"
+          [ngClass]="{'thicken-niveau-0': this.star43 === 0,'thicken-niveau-1': this.star43 === 1,'thicken-niveau-2': this.star43 === 2,'thicken-niveau-3': this.star43 === 3}"
+          (mouseenter)="showStar('43',$event)" (mouseleave)="hideStar()"
+        />
+        <path
+          d="m 8.7893929,193.37487 c -3.69446,4.1e-4 -6.68921,2.63157 -6.68944,5.87729 -9.8e-4,3.24644 2.99414,5.87879 6.68944,5.87919 3.6952901,-4e-4 6.6904001,-2.63275 6.6894001,-5.87919 -2.2e-4,-3.24572 -2.99496,-5.87688 -6.6894001,-5.87729 z"
+          id="path2-1"
+          sodipodi:nodetypes="ccccc"
+          [ngClass]="{'thicken-niveau-0': this.star44 === 0,'thicken-niveau-1': this.star44 === 1,'thicken-niveau-2': this.star44 === 2,'thicken-niveau-3': this.star44 === 3}"
+          (mouseenter)="showStar('44',$event)" (mouseleave)="hideStar()"
+        />
+        
       </g>
     </svg>
 
