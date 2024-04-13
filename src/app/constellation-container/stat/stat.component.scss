@@ -31,12 +31,24 @@
       li {
         list-style-type: none;
         margin-bottom: 0.5rem;
-      }
-    }
 
-    h2 {
-      font-family: "OriginTech";
-      margin-bottom: 1rem;
+        &.zero-level {
+          opacity: 0.5;
+        }
+
+        &.two-level {
+          color: #bcfeff;
+        }
+
+        &.three-level {
+          color: white;
+        }
+      }
+
+      h2 {
+        font-family: "OriginTech";
+        margin-bottom: 1rem;
+      }
     }
   }
 }
