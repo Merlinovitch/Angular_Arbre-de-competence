@@ -26,7 +26,7 @@
     transition: 0.5s;
     pointer-events: none;
     z-index: 99999999;
-    // opacity: 0 !important;
+    opacity: 0 !important;
   }
 
   .back-button {
@@ -397,5 +397,58 @@
 @media screen and (max-width: 600px) {
   .container-constellation {
     flex-direction: column;
+  }
+}
+
+.thicken-niveau-1 {
+  fill: url(#RadialGradient1);
+  animation: svg-shadow 1.5s ease-in-out infinite alternate;
+}
+@keyframes svg-shadow {
+  from {
+      filter: drop-shadow( 0 0 5px red) drop-shadow( 0 0 10px red) drop-shadow( 0 0 20px red);
+  }
+  to {
+      filter: drop-shadow( 0 0 1px red) drop-shadow( 0 0 35px red) drop-shadow( 0 0 50px red);
+  }
+}
+
+.thicken-niveau-2 {
+  fill: url(#RadialGradient2);
+  animation: svg-shadow-niveau-2 1.5s ease-in-out infinite alternate;
+}
+@keyframes svg-shadow-niveau-2 {
+  from {
+      filter: drop-shadow( 0 0 5px yellow) drop-shadow( 0 0 10px yellow) drop-shadow( 0 0 20px yellow);
+  }
+  to {
+      filter: drop-shadow( 0 0 1px yellow) drop-shadow( 0 0 35px yellow) drop-shadow( 0 0 40px yellow);
+  }
+}
+
+.thicken-niveau-3 {
+  fill: url(#RadialGradient3);
+  animation: svg-shadow-niveau-3 1.5s ease-in-out infinite alternate;
+}
+@keyframes svg-shadow-niveau-3 {
+  from {
+      filter: drop-shadow( 0 0 5px rgb(0, 212, 250)) drop-shadow( 0 0 10px rgb(0, 212, 250)) drop-shadow( 0 0 20px rgb(0, 212, 250));
+  }
+  to {
+      filter: drop-shadow( 0 0 1px rgb(0, 212, 250)) drop-shadow( 0 0 35px rgb(0, 212, 250)) drop-shadow( 0 0 40px rgb(0, 212, 250));
+  }
+}
+
+
+.thicken-niveau-0 {
+  fill: white;
+  animation: svg-shadow-niveau-0 1.5s ease-in-out infinite alternate;
+}
+@keyframes svg-shadow-niveau-0 {
+  from {
+      filter: drop-shadow( 0 0 5px white) drop-shadow( 0 0 10px white) drop-shadow( 0 0 20px white);
+  }
+  to {
+      filter: drop-shadow( 0 0 1px white) drop-shadow( 0 0 35px white) drop-shadow( 0 0 40px white);
   }
 }
