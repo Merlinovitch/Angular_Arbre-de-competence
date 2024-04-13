@@ -39,3 +39,25 @@
         }
     }
 }
+
+@media screen and (max-width: 680px) {
+    .footer-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+        > * {
+            width: 100% !important;
+            text-align: center;
+        }
+        
+        .contributors {
+            flex-direction: column;
+            gap: .25rem;
+
+            h2 {
+                margin-bottom: .5rem;
+            }
+        }
+    }
+}
