@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataServiceService } from 'src/app/data-service.service';
 import { ActivatedRoute } from '@angular/router';
@@ -13,6 +13,7 @@ import { StarInfoComponent } from '../star-info/star-info.component';
 })
 export class LockConstellationComponent {
   idApprenant: string = '';
+  @Input() activityTitle: string | undefined;
   @Output()
   public idStarHover: EventEmitter<{string: string,event :Event}> = new EventEmitter<{string: string,event :Event}>();
   @Output()
