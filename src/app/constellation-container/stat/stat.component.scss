@@ -1,9 +1,21 @@
-:host {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2rem;
-    flex-grow: 1;
-    height: 100%;
+@import "../../variables";
+
+.stat-container {
+  color: $primary;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  box-shadow: 0 0 4px $primary, 0 0 64px $primary, inset 0 0 16px $primary,
+    inset 0 0 32px $primary;
+  background: $secondary;
+
+  &-right {
+    padding: 1.25rem 2.5rem;
+
+    z-index: 1;
+
+    h2 {
+      font-family: "OriginTech";
+      margin-right: 0.5rem;
+    }
+  }
 }

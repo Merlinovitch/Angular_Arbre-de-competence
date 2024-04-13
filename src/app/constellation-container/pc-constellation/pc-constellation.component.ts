@@ -34,8 +34,6 @@ export class PcConstellationComponent {
     } catch (e) {
       console.error('error', e);
     }
-    console.log(this.data);
-    
   }
 
   async showStar(event: MouseEvent, elementId: string): Promise<any> {

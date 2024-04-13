@@ -11,7 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./stat.component.scss']
 })
 export class StatComponent implements OnInit {
-  data: any;
+  apprenantData: any;
+  competencesData: any;
 
   constructor(private route: ActivatedRoute, private dataService: DataServiceService) {}
  
@@ -31,12 +32,19 @@ export class StatComponent implements OnInit {
       const id = params.get('id');
       if (id) {
         this.dataService.getApprenantById(id)
-          .then(data => {
-            this.data = data;
-            console.log('statpage ', data);
+          .then(apprenantData => {
+            this.apprenantData = apprenantData;
           })
           .catch(error => {
-            console.error("Une erreur s'est produite :", error);
+            console.error("Une erreur s'est produite lors du chargement des données de l'apprenant :", error);
+          });
+
+        this.dataService.getCompentenceByIdApprenant(id)
+          .then(competencesData => {
+            this.competencesData = competencesData;
+          })
+          .catch(error => {
+            console.error("Une erreur s'est produite lors du chargement des données de compétences :", error);
           });
       }
     });
