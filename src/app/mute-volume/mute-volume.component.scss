@@ -1,0 +1,43 @@
+.mute-volume {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    transform: scale(.8);
+    opacity: .5;
+    transition: .1s;
+}
+
+.mute-1,
+.mute-2 {
+    width: 25px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.mute-1 {
+    background: url(../../assets/images/mute1.webp);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mute-2 {
+    background: url(../../assets/images/mute2.webp);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+.mute-volume:hover {
+    transform: scale(1);
+}
+.mute-volume:hover,
+.enable-sounds,
+.enable-sounds > * {
+    opacity: .85 !important;
+}
+
+.enable-sounds {
+    background: url(../../assets/images/mute.webp) !important;
+}

@@ -1,3 +1,26 @@
+
+# Présentation du projet
+Notre projet se déroule dans l'espace galactique.
+
+## Effets sonores
+Un bouton en haut à droite de l'écran permet d'activer ou non les effets sonores.
+
+## Accueil
+L'écran d'accueil montre la liste des apprenants, et une image de la Voie lactée contenant des cadres avec les photos des apprenants.
+
+Au survol d'un nom ou d'un cadre, le cadre se déploie et indique la progression globale actuelle de l'apprenant.
+
+Quand on clique sur un nom dans la liste ou sur un cadre, on arrive dans l'écran des constellations lié à l'apprenant sélectionné.
+
+## Constellation
+Chaque constellation représente une activité, et chaque étoile de la constellation représente une compétence.
+
+Selon le niveau atteint pour une compétence donnée (de 0 à 3), l'étoile est plus ou moins brillante.
+
+Au survol d'une étoile, un tooltip indique le titre et le niveau de la compétence.
+
+
+
 # SkillTree
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.

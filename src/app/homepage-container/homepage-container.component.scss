@@ -20,6 +20,7 @@
         transition: .5s;
         pointer-events: none;
         z-index: 99999999;
+        // opacity: 0 !important;
     }
 
     &-container {
@@ -151,4 +152,39 @@ app-homepage-character-list {
     align-items: center;
     padding-left: 2rem;
     font-family: 'OriginTech';
+}
+
+@media screen and (max-width: 680px) {
+    app-homepage-character-list {
+        position: absolute;
+        display: none !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .homepage {
+
+        &-container {
+            height: auto;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        &-title {
+            position: relative;
+            font-size: 2rem;
+            margin-top: 2.2rem;
+            pointer-events: none;
+        }
+
+        &-subtitle {
+            position: relative;
+            margin-top: 0;
+            font-size: 1.4rem;
+            line-height: 1.2rem;
+            text-align: center;
+            pointer-events: none;
+        }
+
+    }
 }

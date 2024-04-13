@@ -44,3 +44,15 @@ body {
     width: 100%;
     overflow: hidden;
 }
+
+@media screen and (max-width: 680px) {
+    html,
+    body {
+        overflow-y: scroll;
+    }
+    app-galaxy {
+        width: 100%;
+        align-items: flex-start;
+        transform: none;
+    }
+}
