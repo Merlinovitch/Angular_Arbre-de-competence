@@ -6,7 +6,7 @@
     <span></span>
     <p>Back to Galaxy</p>
   </div>
-  <div class="container-constellation">
+  <div *ngIf="activities" class="container-constellation">
     <app-pc-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[0]?.title">
     </app-pc-constellation>
     <app-lock-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[1]?.title"></app-lock-constellation>
