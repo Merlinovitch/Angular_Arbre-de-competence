@@ -25,7 +25,6 @@ export class DataServiceService {
         .from('Apprenant')
         .select('*')
         .eq('id', id);
-        console.log('Get apprenant by id :', data);
       return data;
     } catch (error) {
       console.log(error);

@@ -1,16 +1,13 @@
-<div class="stat-left">
-  <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit nobis
-    ducimus, voluptas aliquam voluptatem ab omnis corrupti alias numquam
-    eligendi qui similique aliquid magni eveniet. Velit id fugiat molestiae
-    amet.
-  </p>
-</div>
-<div class="picture-container">
-  <img src="../../../assets/images/characters/{{ data[0]?.photo_url }}.png"
-    alt="{{ data[0]?.name }} {{ data[0]?.lastname }}" />
-</div>
-<div class="stat-right">
-  <p>{{ data[0]?.name }} {{ data[0]?.lastname }}</p><br>
-  <p> {{ calculateAge(data[0]?.birthdate)}} ans</p>
+<div *ngIf="apprenantData" class="stat-container">
+  <img src="../../../assets/images/characters/{{ apprenantData[0]?.photo_url }}.png"
+    alt="{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }}" />
+
+  <div class="stat-container-right">
+    <h2>{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }} - {{ calculateAge(apprenantData[0]?.birthdate)}} ans</h2>
+    <ul class="stat-container-right-competences">
+      <li *ngFor="let competence of competencesData">
+        {{ competence.Competence.title }} : lvl&nbsp;{{ competence.niveau }}
+      </li>
+    </ul>
+  </div>
 </div>
