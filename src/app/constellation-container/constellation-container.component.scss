@@ -25,7 +25,7 @@
         transition: .5s;
         pointer-events: none;
         z-index: 99999999;
-        opacity: 0 !important;
+        // opacity: 0 !important;
     }
 
     .back-button {
@@ -148,7 +148,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    padding-top: 3rem;
+    padding-top: 5rem;
     
     > * {
         width: 30%;
@@ -160,9 +160,16 @@
     }
 
     .constellation-border {
+        width: 100%;
+        height: 100%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.25rem;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        // background: red;
     }
 }
 // svg {
@@ -183,6 +190,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: .8rem;
         color: $primary;
         background: $secondary;
         box-shadow: 0 0 4px $primary,
@@ -293,10 +301,12 @@
 app-stat {
     gap: 2rem;
     padding: 0 2rem;
+    // background: green;
 }
 .stat-left,
 .stat-right {
     // transform: scaleX(0);
+    height: 6rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -311,8 +321,56 @@ app-stat {
     font-family: "Nasalization";
     z-index: 1;
 }
+.stat-right {
+    white-space: nowrap;
+    flex-direction: column;
+    gap: .25rem;
+}
+.progress-bar {
+    position: relative;
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background: $secondary;
 
+    &-loader {
+        position: relative;
+        width: 100%;
+        height: 1.2rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: .6rem;
+        background: $secondary;
+        border: 1px solid $primary;
+        box-shadow: 0 0 4px $primary;
+        opacity: .85;
 
+        &-inner {
+            position: absolute;
+            width: var(--i);
+            height: 100%;
+            border-radius: .6rem;
+            background: $primary;
+            box-shadow: 0 0 4px $primary,
+            0 0 8px $primary;
+            transition: 2s;
+            transition-delay: 2.5s;
+        }
+    }
+
+    &-percent {
+        width: 50%;
+        margin-top: .25rem;
+        color: $primary;
+        font-family: 'OriginTech';
+        text-align: right;
+        text-shadow: 0 0 2px $primary;
+    }
+    
+}
 @keyframes hologram {
     from, to {
         filter:
