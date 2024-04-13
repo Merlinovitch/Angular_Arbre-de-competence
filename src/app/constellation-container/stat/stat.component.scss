@@ -22,6 +22,11 @@
     padding: 1.25rem 2.5rem;
     z-index: 1;
 
+    &-title {
+      font-family: "OriginTech";
+      margin-bottom: 1rem;
+    }
+
     &-competences {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -43,11 +48,6 @@
         &.three-level {
           color: white;
         }
-      }
-
-      h2 {
-        font-family: "OriginTech";
-        margin-bottom: 1rem;
       }
     }
   }
