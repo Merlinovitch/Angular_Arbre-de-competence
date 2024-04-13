@@ -3,11 +3,13 @@
     alt="{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }}" />
 
   <div class="stat-container-right">
-    <h2>{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }} - {{ calculateAge(apprenantData[0]?.birthdate)}} ans</h2>
+    <h2 class="stat-container-right-title">{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }} - {{ calculateAge(apprenantData[0]?.birthdate)}} ans</h2>
+
     <ul class="stat-container-right-competences">
-      <li *ngFor="let competence of competencesData">
-        {{ competence.Competence.title }} : lvl&nbsp;{{ competence.niveau }}
+      <li *ngFor="let competence of competencesData" [ngClass]="{'zero-level': competence.niveau === 0, 'two-level': competence.niveau === 2, 'three-level': competence.niveau === 3}">
+        {{ competence.Competence.title }} : lvl&nbsp;{{ competence.niveau }}/3
       </li>
     </ul>
+
   </div>
 </div>

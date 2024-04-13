@@ -15,6 +15,7 @@ import { BehaviorSubject } from 'rxjs';
 export class PcConstellationComponent {
 
   idApprenant: string = '';
+  @Input() activityTitle: string | undefined;
   @Output()
   public idStarHover: EventEmitter<{string: string,event :Event}> = new EventEmitter<{string: string,event :Event}>();
   @Output()
