@@ -28,6 +28,16 @@ export class ConstellationContainerComponent {
   soundsEnabled: any;
   warpSound: any;
   idApprenant: string = "";
+  activitiesProgress: any[] = [
+    0,
+    0,
+    0,
+  ];
+  activitiesPercent: any[] = [
+    0,
+    0,
+    0,
+  ];
   
   constructor(private router: Router, private dataService:DataServiceService, private route: ActivatedRoute,private renderer: Renderer2, )
   {
@@ -45,9 +55,68 @@ export class ConstellationContainerComponent {
     } catch (e) {
       console.error('error', e);
     }
-    console.log(this.data);
-    
+    // console.log(this.data);
+
+    this.data.forEach((row: any, index: number) => {
+      // console.log("row= ", index, row['Competence']['title'], row['niveau']);  
+      if (index < 4)
+        {
+          this.activitiesProgress[0] += +row['niveau'];
+        } else if (index < 8)
+          {
+            this.activitiesProgress[1] += +row['niveau'];
+          } else {
+              this.activitiesProgress[2] += +row['niveau'];
+          }
+    });
+    console.log(this.activitiesProgress);
+
+    this.calcProgressPercentByActivity();
   }
+
+  calcProgressPercentByActivity()
+  {
+    
+    for (let i = 0, j = 12; i < 3; i++)
+      {
+        if (i === 2) j = 9;
+        const progressBarLoader = document.querySelector(`.pb-activity-${i}`);
+        const progressBarPercent = document.querySelector(`.pb-percent-activity-${i}`);
+        if (progressBarLoader && progressBarPercent)
+          {
+            this.activitiesPercent[i] = Math.floor(100 / j * this.activitiesProgress[i]);
+            progressBarLoader.setAttribute("style", `--i: ${this.activitiesPercent[i]}%`);
+            this.updateProgressBarPercent(progressBarPercent, this.activitiesPercent[i]);
+            // progressBarPercent.textContent = `${this.activitiesPercent[i]}%`;
+          }
+
+      }
+
+      // console.log("percent", this.activitiesPercent);
+  }
+
+  updateProgressBarPercent(target: Element, value: number)
+  {
+    target.textContent = "0%";
+    let displayedValue = 0;
+
+    setTimeout(() => {
+      
+      const updateText = setInterval(() => {
+        displayedValue++;
+        if (displayedValue === value)
+          {
+            clearInterval(updateText);
+          }
+        target.textContent = `${displayedValue}%`;
+      }, 200 / value);
+
+    }, 2500);
+
+    
+    // target.textContent = `${value}%`;
+  }
+
   @HostListener('window:click', ['$event']) onMouseClick(e: any)
   {
     switch (e.target.className)
