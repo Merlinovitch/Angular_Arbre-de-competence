@@ -82,7 +82,7 @@ export class ConstellationContainerComponent {
         if (i === 2) j = 9;
         const progressBarLoader = document.querySelector(`.pb-activity-${i}`);
         const progressBarPercent = document.querySelector(`.pb-percent-activity-${i}`);
-        if (progressBarLoader && progressBarPercent)
+        if (progressBarLoader && progressBarPercent && this.activitiesProgress[i] > 0)
           {
             this.activitiesPercent[i] = Math.floor(100 / j * this.activitiesProgress[i]);
             progressBarLoader.setAttribute("style", `--i: ${this.activitiesPercent[i]}%`);

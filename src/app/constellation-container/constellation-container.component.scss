@@ -145,25 +145,26 @@
 }
 
 .container-constellation {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  padding-top: 3rem;
-
-  > * {
-    width: 30%;
-    height: 100%;
+    width: 100%;
     display: flex;
-    // flex-direction: column;
-    justify-content: center;
-    align-items: self-end;
-  }
+    justify-content: space-around;
+    flex-direction: row;
+    padding-top: 3rem;
 
-  .constellation-border {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+    > * {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: self-end;
+    }
+
+    .constellation-border {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 // svg {
 //     mix-blend-mode:soft-light;
@@ -258,32 +259,24 @@
   }
 }
 
+.stat-container img {
+    --timer: 10s;
+    // border-radius: 50%;
+    animation: hologram calc(var(--timer) * 2) linear infinite;
+    pointer-events: none;
+}
+
 .picture-container {
   border-radius: 50%;
   box-shadow: 0 0 4px $primary, 0 0 64px $primary, inset 0 0 16px $primary,
     inset 0 0 32px $primary;
   background: $secondary;
   z-index: 2;
-
-  img {
-    --timer: 10s;
-    border-radius: 50%;
-    animation: hologram calc(var(--timer) * 2) linear infinite;
-    pointer-events: none;
-  }
-
-  // &:hover {
-  //     background: red;
-
-  //     ~ .stat-right {
-
-  //     background: red;
-  //     }
-  // }
 }
 
 .progress-bar {
   position: relative;
+  margin: 0 auto;
   margin-top: 1rem;
   width: 12rem;
   display: flex;
