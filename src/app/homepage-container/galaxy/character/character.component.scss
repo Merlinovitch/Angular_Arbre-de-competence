@@ -324,11 +324,21 @@
         margin-top: 20px;
     }
 
+    .character-progress {
+        display: flex;
+        gap: .25rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
     p {
         font-size: .8rem;
         white-space: nowrap;
         margin-top: auto;
-        margin-bottom: 20px;
+    }
+
+    p:last-of-type {
+        font-size: 1.15rem;
     }
 }
 
