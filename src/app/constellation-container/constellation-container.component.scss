@@ -458,3 +458,54 @@ app-stat {
       filter: drop-shadow( 0 0 1px white) drop-shadow( 0 0 35px white) drop-shadow( 0 0 40px white);
   }
 }
+
+.img_constellation-pc{
+  opacity: 0;
+  transition: 2s;
+  fill: #4aff02;
+}
+
+.stroke-lock{
+  fill: none;
+  stroke: #ffee02;
+  stroke-width:  1.30629;
+  opacity: 0;
+  transition: 2s;
+}
+
+.stroke-rocket{
+  fill: none;
+  stroke: #ffffff;
+  stroke-width:  1.30629;
+  opacity: 0;
+  transition: 2s;
+}
+
+
+.constellation:hover > svg > .img_constellation-pc {
+  display: block;
+  box-shadow:
+  0 0 60px 30px #fff,  /* inner white */
+  0 0 100px 60px #f0f, /* middle magenta */
+  0 0 140px 90px #0ff; /* outer cyan */
+  opacity: 1;
+}
+
+
+.constellation:hover > svg > g >.stroke-rocket{
+  display: block;
+  box-shadow:
+  0 0 60px 30px #fff,  /* inner white */
+  0 0 100px 60px #f0f, /* middle magenta */
+  0 0 140px 90px #0ff; /* outer cyan */
+  opacity: 1;
+}
+
+.constellation:hover > svg > g >.stroke-lock{
+  display: block;
+  box-shadow:
+  0 0 60px 30px #fff,  /* inner white */
+  0 0 100px 60px #f0f, /* middle magenta */
+  0 0 140px 90px #0ff; /* outer cyan */
+  opacity: 1;
+}
