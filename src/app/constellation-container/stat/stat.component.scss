@@ -58,3 +58,25 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container-constellation {
+    flex-direction: column; 
+  }
+
+  .stat-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .stat-container > img{
+    padding-top: 2rem;
+  }
+  .stat-container-right-activities{
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -26,7 +26,7 @@
     transition: 0.5s;
     pointer-events: none;
     z-index: 99999999;
-    opacity: 0 !important;
+    //opacity: 0 !important;
   }
 
   .back-button {
@@ -394,11 +394,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .container-constellation {
-    flex-direction: column;
-  }
-}
+
 
 app-stat {
   width: 80%;
@@ -509,4 +505,36 @@ app-stat {
   0 0 100px 60px #f0f, /* middle magenta */
   0 0 140px 90px #0ff; /* outer cyan */
   opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .container-constellation {
+    flex-direction: column; 
+  }
+  .mobile-hidden-component{
+    display: none;
+  }
+  .container{
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 5rem;
+  }
+
+  .footer-container{
+    background-image: url(../../assets/images/homepage-background.jpg);
+  }
+
+  app-stat{
+    top: 3rem;
+  }
+
+  .stat-container{
+    margin-top: 0;
+  }
+
+  .stat-container-right-title{
+    font-size: large;
+  }
 }

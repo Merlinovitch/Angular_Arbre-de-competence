@@ -1,34 +1,75 @@
 <div *ngIf="apprenantData" class="stat-container">
-  <img src="../../../assets/images/characters/{{ apprenantData[0]?.photo_url }}.png"
-    alt="{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }}" />
+  <img
+    src="../../../assets/images/characters/{{
+      apprenantData[0]?.photo_url
+    }}.png"
+    alt="{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }}"
+  />
 
   <div class="stat-container-right">
-    <h2 class="stat-container-right-title">{{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }} - {{ calculateAge(apprenantData[0]?.birthdate)}} ans</h2>
-<div class="stat-container-right-activities">
-        <div class="stat-group">
-        <h3 class="stat-container-right-subtitle">Développer une application sécurisée</h3>
-            <ul class="stat-container-right-competences">
-              <li *ngFor="let competence of competencesByActivity1" [ngClass]="{'zero-level': competence.niveau === 0, 'two-level': competence.niveau === 2, 'three-level': competence.niveau === 3}">
-                {{ competence.Competence.title }} : lvl&nbsp;{{ competence.niveau }}/3
-              </li>
-            </ul>
-        </div>
-        <div class="stat-group">
-            <h3 class="stat-container-right-subtitle">Concevoir et développer une application sécurisée organisée en couches</h3>
-            <ul class="stat-container-right-competences">
-              <li *ngFor="let competence of competencesByActivity2" [ngClass]="{'zero-level': competence.niveau === 0, 'two-level': competence.niveau === 2, 'three-level': competence.niveau === 3}">
-                {{ competence.Competence.title }} : lvl&nbsp;{{ competence.niveau }}/3
-              </li>
-            </ul>
-        </div>
-        <div class="stat-group">
-            <h3 class="stat-container-right-subtitle">Préparer le déploiement d’une application sécurisée</h3>
-            <ul class="stat-container-right-competences">
-              <li *ngFor="let competence of competencesByActivity3" [ngClass]="{'zero-level': competence.niveau === 0, 'two-level': competence.niveau === 2, 'three-level': competence.niveau === 3}">
-                {{ competence.Competence.title }} : lvl&nbsp;{{ competence.niveau }}/3
-              </li>
-            </ul>
-        </div>
+    <h2 class="stat-container-right-title">
+      {{ apprenantData[0]?.name }} {{ apprenantData[0]?.lastname }} -
+      {{ calculateAge(apprenantData[0]?.birthdate) }} ans
+    </h2>
+
+    <div class="stat-container-right-activities">
+      <div class="stat-group">
+        <h3 class="stat-container-right-subtitle">
+          Développer une application sécurisée
+        </h3>
+        <ul class="stat-container-right-competences">
+          <li
+            *ngFor="let competence of competencesByActivity1"
+            [ngClass]="{
+              'zero-level': competence.niveau === 0,
+              'two-level': competence.niveau === 2,
+              'three-level': competence.niveau === 3
+            }"
+          >
+            {{ competence.Competence.title }} : lvl&nbsp;{{
+              competence.niveau
+            }}/3
+          </li>
+        </ul>
       </div>
+      <div class="stat-group">
+        <h3 class="stat-container-right-subtitle">
+          Concevoir et développer une application sécurisée organisée en couches
+        </h3>
+        <ul class="stat-container-right-competences">
+          <li
+            *ngFor="let competence of competencesByActivity2"
+            [ngClass]="{
+              'zero-level': competence.niveau === 0,
+              'two-level': competence.niveau === 2,
+              'three-level': competence.niveau === 3
+            }"
+          >
+            {{ competence.Competence.title }} : lvl&nbsp;{{
+              competence.niveau
+            }}/3
+          </li>
+        </ul>
+      </div>
+      <div class="stat-group">
+        <h3 class="stat-container-right-subtitle">
+          Préparer le déploiement d’une application sécurisée
+        </h3>
+        <ul class="stat-container-right-competences">
+          <li
+            *ngFor="let competence of competencesByActivity3"
+            [ngClass]="{
+              'zero-level': competence.niveau === 0,
+              'two-level': competence.niveau === 2,
+              'three-level': competence.niveau === 3
+            }"
+          >
+            {{ competence.Competence.title }} : lvl&nbsp;{{
+              competence.niveau
+            }}/3
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
