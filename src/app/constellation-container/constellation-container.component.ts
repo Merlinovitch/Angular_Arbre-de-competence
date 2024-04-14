@@ -143,6 +143,10 @@ export class ConstellationContainerComponent {
     switch (e.target.className)
     {
       case "back-button":
+
+        const backBtn = document.querySelector(".back-button");
+        backBtn?.classList.add("back-button-clicked");
+        
         const loadingScreen: any = document.querySelector(".container-loader");
 
         if (this.soundsEnabled.classList.contains("enable-sounds"))

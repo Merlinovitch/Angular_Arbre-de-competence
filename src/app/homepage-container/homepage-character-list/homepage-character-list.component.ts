@@ -82,7 +82,9 @@ export class HomepageCharacterListComponent {
           } else if (e.target.className === "character-content") {
             characterID = e.target.id.substring(10);
           }
-        
+        const characterNameCard = document.querySelector(`#character-list-${characterID}`);
+        characterNameCard?.classList.add("homepage-character-card-name-clicked");
+
         const target: any = document.querySelector(`#character-${characterID}`);
         const position = target.getBoundingClientRect();
         const x = Math.floor(position.top);

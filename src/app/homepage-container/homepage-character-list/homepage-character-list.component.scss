@@ -90,7 +90,9 @@
         
     }
 
-    &-card:hover {
+    &-card:hover,
+    &-card-name-clicked {
+        color: $secondary !important;
         background: $primary;
         box-shadow: 0 0 4px $primary,
         0 0 8px $primary,

@@ -85,7 +85,8 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &-clicked {
       p {
         color: $secondary;
         transition: 0.75s;
