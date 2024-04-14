@@ -23,6 +23,8 @@ export class CanvasComponent {
   delay: any;
   clickEffectDelay: any;
   hover: any;
+  activityIsHover: any;
+  activityHoverID: any;
 
   constructor()
   {
@@ -51,6 +53,8 @@ export class CanvasComponent {
     this.delay = 4;
     this.clickEffectDelay = false;
     this.hover = false;
+    this.activityIsHover = false;
+    this.activityHoverID = 0;
     this.canvas.click();
 
     for (let i = 0; i < 12; i++)
@@ -72,6 +76,18 @@ export class CanvasComponent {
 
   @HostListener('window:mousemove', ['$event']) onMouseMove(e: any)
   { 
+    if (e.target.classList == "activity-title" && this.activityIsHover === false)
+      {
+        this.activityIsHover = true;
+        this.activityHoverID = e.target.id.substring(9);
+        console.log(this.activityHoverID);
+        const activityStat = document.querySelector(`#stat-group-${this.activityHoverID}`);
+        activityStat?.classList.toggle("activity-focus");
+
+      } else if (e.target.classList != "activity-title" && this.activityIsHover === true) {
+        document.querySelector(`#stat-group-${this.activityHoverID}`)?.classList.toggle("activity-focus");
+        this.activityIsHover = false;
+      }
     if (
         e.target.classList.contains("character-content")
         ||

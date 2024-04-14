@@ -405,7 +405,7 @@ app-stat {
 
 .thicken-niveau-1 {
   fill: url(#RadialGradient1);
-  animation: svg-shadow 1.5s ease-in-out infinite alternate;
+  animation: svg-shadow 1.25s ease-in-out infinite alternate;
 }
 @keyframes svg-shadow {
   from {
@@ -431,7 +431,7 @@ app-stat {
 
 .thicken-niveau-3 {
   fill: url(#RadialGradient3);
-  animation: svg-shadow-niveau-3 1.5s ease-in-out infinite alternate;
+  animation: svg-shadow-niveau-3 1.75s ease-in-out infinite alternate;
 }
 @keyframes svg-shadow-niveau-3 {
   from {
@@ -445,7 +445,7 @@ app-stat {
 
 .thicken-niveau-0 {
   fill: white;
-  animation: svg-shadow-niveau-0 1.5s ease-in-out infinite alternate;
+  animation: svg-shadow-niveau-0 2s ease-in-out infinite alternate;
 }
 @keyframes svg-shadow-niveau-0 {
   from {

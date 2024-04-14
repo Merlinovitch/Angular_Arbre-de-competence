@@ -4,7 +4,7 @@
     <span></span>
     <span></span>
     <span></span>
-    <p>Back to Galaxy</p>
+    <p>Retour à la Galaxie</p>
   </div>
   <div *ngIf="activities" class="container-constellation">
     <app-pc-constellation [ngClass]="'mobile-hidden-component'" (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[0]?.title" [data]="data"></app-pc-constellation>
