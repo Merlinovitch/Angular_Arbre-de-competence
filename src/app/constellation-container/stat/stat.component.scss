@@ -27,7 +27,7 @@
 
     &-title {
       font-family: "OriginTech";
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
     }
 
     &-competences {
@@ -59,8 +59,25 @@
   }
 }
 
+.stat-group {
+  transition: 1s;
+  padding: .5rem;
+  
+  h3 {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+  }
+}
 
+.activity-focus {
+  box-shadow: 0 0 8px $primary,
+  0 0 8px $primary;
 
+  * {
+    filter: hue-rotate(-120deg);
+  }
+}
 @media screen and (max-width: 1024px) and (min-width: 600px)  {
   .container-constellation {
     flex-direction: column; 
