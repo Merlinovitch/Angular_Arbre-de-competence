@@ -181,8 +181,19 @@ export class ConstellationContainerComponent {
       
       this.renderer.setStyle(tooltip, 'display', 'block');
       this.renderer.setStyle(tooltip, 'position', 'absolute');
-      this.renderer.setStyle(tooltip, 'left', event.clientX + 20 + 'px');
-      this.renderer.setStyle(tooltip, 'top', event.clientY + 'px');
+      if(event.clientX < 1700 && event.clientY < 370)
+        {
+          this.renderer.setStyle(tooltip, 'left', event.clientX + 20 + 'px');
+          this.renderer.setStyle(tooltip, 'top', event.clientY + 'px');
+        }
+        else if (event.clientX > 1700){
+          this.renderer.setStyle(tooltip, 'left', event.clientX - 320 + 'px');
+          this.renderer.setStyle(tooltip, 'top', event.clientY + 'px');
+        } else if (event.clientY > 370 ){
+          this.renderer.setStyle(tooltip, 'left', event.clientX + 20 + 'px');
+          this.renderer.setStyle(tooltip, 'top', event.clientY + -80 +'px');
+        }
+
       
       const row = this.data.find((e :any) => e.Competence.id == string)
       console.log('row in const',row);
