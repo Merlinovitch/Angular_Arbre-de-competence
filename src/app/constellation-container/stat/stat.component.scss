@@ -58,3 +58,52 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container-constellation {
+    flex-direction: column; 
+  }
+
+  .stat-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .stat-container > img{
+    padding-top: 2rem;
+  }
+  .stat-container-right-activities{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container-constellation {
+    flex-direction: column; 
+  }
+
+  .stat-container{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .stat-container > img{
+    padding-top: 2rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stat-container-right-activities{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
