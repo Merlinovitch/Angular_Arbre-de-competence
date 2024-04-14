@@ -399,3 +399,10 @@
     flex-direction: column;
   }
 }
+
+app-stat {
+  width: 80%;
+  z-index: 1;
+  top: -3rem;
+  position: relative;
+}
