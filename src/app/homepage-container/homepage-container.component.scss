@@ -165,7 +165,8 @@ app-homepage-character-list {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    animation: 30s special 5s cubic-bezier(0.55, 0.055, 0.9, 0.19) infinite;
+    animation: 60s special 5s cubic-bezier(0.55, 0.055, 0.9, 0.19) infinite;
+    filter: blur(2px);
     pointer-events: none;
 }
 
@@ -175,7 +176,7 @@ app-homepage-character-list {
         left: 0;
         transform: scale(0);
     }
-    30%, 100% {
+    25%, 100% {
         top: 100%;
         left: 100%;
         transform: scale(1);
