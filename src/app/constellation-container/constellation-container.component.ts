@@ -90,9 +90,12 @@ export class ConstellationContainerComponent {
               this.activitiesProgress[2] += +row['niveau'];
           }
     });
-    console.log(this.activitiesProgress);
+    // console.log("progress= ",this.activitiesProgress);
 
-    this.calcProgressPercentByActivity();
+    setTimeout(() => {
+      this.calcProgressPercentByActivity();
+    }, 500);
+
   }
 
   calcProgressPercentByActivity()
@@ -101,14 +104,15 @@ export class ConstellationContainerComponent {
     for (let i = 0, j = 12; i < 3; i++)
       {
         if (i === 2) j = 9;
+
         const progressBarLoader = document.querySelector(`.pb-activity-${i}`);
         const progressBarPercent = document.querySelector(`.pb-percent-activity-${i}`);
+        
         if (progressBarLoader && progressBarPercent && this.activitiesProgress[i] > 0)
           {
             this.activitiesPercent[i] = Math.floor(100 / j * this.activitiesProgress[i]);
             progressBarLoader.setAttribute("style", `--i: ${this.activitiesPercent[i]}%`);
             this.updateProgressBarPercent(progressBarPercent, this.activitiesPercent[i]);
-            // progressBarPercent.textContent = `${this.activitiesPercent[i]}%`;
           }
 
       }
