@@ -9,18 +9,21 @@
   background: $secondary;
   margin-top: 2rem;
   font-family: "Nasalization";
-  font-size: small;
   width: 100%;
   align-items: end;
 
   img {
-    height: 120%;
-    margin-bottom: 0.25rem;
+    height: 110%;
   }
 
   &-right {
     padding: 1.25rem 2.5rem;
     z-index: 1;
+
+    &-subtitle {
+      font-family: "Nasalization";
+      font-size: smaller;
+    }
 
     &-title {
       font-family: "OriginTech";
@@ -28,12 +31,9 @@
     }
 
     &-competences {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 1rem;
-      align-items: center;
-
       li {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: smaller;
         list-style-type: none;
         margin-bottom: 0.5rem;
 
@@ -49,6 +49,12 @@
           color: white;
         }
       }
+    }
+
+    &-activities {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
     }
   }
 }
