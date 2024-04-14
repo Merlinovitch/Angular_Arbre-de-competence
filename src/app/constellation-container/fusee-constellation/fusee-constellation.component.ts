@@ -18,8 +18,36 @@ export class FuseeConstellationComponent {
   public idStarHover: EventEmitter<{string: string,event :Event}> = new EventEmitter<{string: string,event :Event}>();
   @Output()
   public starLeave: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input()
+  data: any;
+  star42: number = 0;
+  star43: number = 0;
+  star44: number = 0;
 
   constructor() {
+  }
+
+  ngAfterViewInit(): void {
+    console.log('in');
+    
+    this.data.forEach((element:any) => {  
+      switch(element.Competence.id){        
+        case 42: {
+          this.star42 = element.niveau
+          break;
+        }
+        case 43: {
+          this.star43 = element.niveau
+          break;
+        }
+        case 44: {
+          this.star44 = element.niveau
+          break;
+        }
+        default:
+          break;
+      }
+    });
   }
 
   showStar(idApprenant: string,event: Event): void {

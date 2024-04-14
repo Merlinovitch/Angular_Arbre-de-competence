@@ -16,18 +16,19 @@
         display: block;
     }
 }
-.img_constellation{
-    opacity: 0;
-    transition: 2s;
-    fill: #68e28d;
-    animation: fadeOut 2s;
-}
-.constellation:hover > svg > .img_constellation{
-    display: block;
-    fill: #68e28d;
-    box-shadow:
-    0 0 60px 30px #fff,  /* inner white */
-    0 0 100px 60px #f0f, /* middle magenta */
-    0 0 140px 90px #0ff; /* outer cyan */
-    opacity: 1;
-}
+
+// .img_constellation{
+//     opacity: 0;
+//     transition: 2s;
+//     fill: #68e28d;
+//     animation: fadeOut 2s;
+// }
+// .constellation:hover > svg > .img_constellation{
+//     display: block;
+//     fill: #68e28d;
+//     box-shadow:
+//     0 0 60px 30px #fff,  /* inner white */
+//     0 0 100px 60px #f0f, /* middle magenta */
+//     0 0 140px 90px #0ff; /* outer cyan */
+//     opacity: 1;
+// }

@@ -8,9 +8,11 @@
   </div>
   <div *ngIf="activities" class="container-constellation">
     <app-pc-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[0]?.title">
+  <div class="container-constellation">
+    <app-pc-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[0]?.title" [data]="data">
     </app-pc-constellation>
-    <app-lock-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[1]?.title"></app-lock-constellation>
-    <app-fusee-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[2]?.title"></app-fusee-constellation>
+    <app-lock-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[1]?.title" [data]="data" ></app-lock-constellation>
+    <app-fusee-constellation (idStarHover)="showStar($event)" (starLeave)="hideStar($event)" [activityTitle]="activities[2]?.title" [data]="data" ></app-fusee-constellation>
   </div>
   <app-star-info [tooltipContent]="tooltipContent"></app-star-info>
 

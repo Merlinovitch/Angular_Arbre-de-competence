@@ -29,6 +29,25 @@ export class ConstellationContainerComponent {
   soundsEnabled: any;
   warpSound: any;
   idApprenant: string = "";
+  activitiesTitles: any[] = [
+    [
+      "Développer des interfaces utilisateur",
+      "Développer des composants métier",
+      "Installer et configurer son environnement de travail en fonction du projet",
+      "Contribuer à la gestion d’un projet informatique",
+    ],
+    [
+      "Développer des composants d’accès aux données SQL et NoSQL",
+      "Concevoir et mettre en place une base de données relationnelle",
+      "Analyser les besoins et maquetter une application",
+      "Définir l’architecture logicielle d’une application",
+    ],
+    [
+      "Préparer et exécuter les plans de tests d’une application",
+      "Préparer et documenter le déploiement d’une application",
+      "Contribuer à la mise en production dans une démarche DevOps",
+    ],
+  ];
   activitiesProgress: any[] = [
     0,
     0,
@@ -57,14 +76,14 @@ export class ConstellationContainerComponent {
     } catch (e) {
       console.error('error', e);
     }
-    // console.log(this.data);
+    console.log(this.data);
 
     this.data.forEach((row: any, index: number) => {
       // console.log("row= ", index, row['Competence']['title'], row['niveau']);  
-      if (index < 4)
+      if (this.activitiesTitles[0].includes(row['Competence']['title']))
         {
           this.activitiesProgress[0] += +row['niveau'];
-        } else if (index < 8)
+        } else if (this.activitiesTitles[1].includes(row['Competence']['title']))
           {
             this.activitiesProgress[1] += +row['niveau'];
           } else {
