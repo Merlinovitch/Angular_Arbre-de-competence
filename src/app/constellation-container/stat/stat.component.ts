@@ -13,8 +13,12 @@ import { CommonModule } from '@angular/common';
 export class StatComponent implements OnInit {
   apprenantData: any;
   competencesData: any;
+  competencesByActivity1: any[] = [];
+  competencesByActivity2: any[] = [];
+  competencesByActivity3: any[] = [];
 
-  constructor(private route: ActivatedRoute, private dataService: DataServiceService) {}
+  constructor(private route: ActivatedRoute, private dataService: DataServiceService) {
+  }
  
   calculateAge(birthdate: string): number {
     const today = new Date();
@@ -42,6 +46,12 @@ export class StatComponent implements OnInit {
         this.dataService.getCompentenceByIdApprenant(id)
           .then(competencesData => {
             this.competencesData = competencesData;
+            this.competencesByActivity1 = this.competencesData.filter((competence: any) => competence.Competence.id >= 34 && competence.Competence.id <= 37);
+            this.competencesByActivity2 = this.competencesData.filter((competence: any) => competence.Competence.id >= 38 && competence.Competence.id <= 41);
+            this.competencesByActivity3 = this.competencesData.filter((competence: any) => competence.Competence.id >= 42 && competence.Competence.id <= 44);
+
+            console.log(this.competencesByActivity1);
+
           })
           .catch(error => {
             console.error("Une erreur s'est produite lors du chargement des données de compétences :", error);

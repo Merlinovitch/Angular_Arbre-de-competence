@@ -400,6 +400,13 @@
   }
 }
 
+app-stat {
+  width: 80%;
+  z-index: 1;
+  top: -3rem;
+  position: relative;
+}
+
 .thicken-niveau-1 {
   fill: url(#RadialGradient1);
   animation: svg-shadow 1.5s ease-in-out infinite alternate;
