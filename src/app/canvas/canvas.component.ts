@@ -16,6 +16,7 @@ export class CanvasComponent {
   cursorIsInBrowser: any;
   sparkles: any;
   public soundsEnabled: any;
+  spaceAmbient: any;
   beamSound: any;
   clickSound: any;
   charSounds: any;
@@ -26,6 +27,9 @@ export class CanvasComponent {
   constructor()
   {
     this.soundsEnabled = false;
+    this.spaceAmbient = document.createElement('audio');
+    this.spaceAmbient.setAttribute('src', "../../assets/sounds/spaceambient.mp3");
+    this.spaceAmbient.loop = true;
     this.beamSound = document.createElement('audio');
     this.beamSound.setAttribute('src', "../../assets/sounds/beam.mp3");
     this.beamSound.setAttribute('preload', "auto");
@@ -121,9 +125,11 @@ export class CanvasComponent {
       if (this.soundsEnabled === false)
         {
           this.soundsEnabled = true;
+          this.spaceAmbient.play();
           muteBtn.classList.add("enable-sounds");
         } else {
           this.soundsEnabled = false;
+          this.spaceAmbient.pause();
           muteBtn.classList.remove("enable-sounds");
         }
     }
