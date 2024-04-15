@@ -95,6 +95,15 @@
     }
 }
 
+@keyframes galaxy-mobile-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media screen and (max-width: 680px) {
     app-character {
         position: relative;
@@ -120,5 +129,6 @@
         position: fixed;
         top: 0;
         transform: none;
+        animation: galaxy-mobile-rotate 180s linear infinite;
     }
 }

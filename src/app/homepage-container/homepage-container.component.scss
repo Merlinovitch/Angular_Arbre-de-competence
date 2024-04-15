@@ -176,10 +176,13 @@ app-homepage-character-list {
         left: 0;
         transform: scale(0);
     }
-    25%, 100% {
+    25% {
         top: 100%;
         left: 75%;
         transform: scale(1);
+    }
+    26%, 100% {
+        transform: scale(0);
     }
 }
 
@@ -201,9 +204,10 @@ app-homepage-character-list {
 
         &-title {
             position: relative;
-            font-size: 2rem;
+            font-size: 1.878rem;
             margin-top: 2.2rem;
             pointer-events: none;
+            letter-spacing: .25rem;
         }
 
         &-subtitle {
@@ -213,7 +217,13 @@ app-homepage-character-list {
             line-height: 1.2rem;
             text-align: center;
             pointer-events: none;
+            letter-spacing: .5rem;
         }
+    }
 
+    .special {
+        display: none;
+        animation: none;
+        transform: scale(0);
     }
 }
