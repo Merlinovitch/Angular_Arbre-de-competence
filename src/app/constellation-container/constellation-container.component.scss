@@ -41,6 +41,7 @@
       0 0 16px $primary;
     font-family: "OriginTech";
     opacity: 0.85;
+    z-index: 99;
 
     > * {
       pointer-events: none;
